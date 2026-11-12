@@ -1,0 +1,56 @@
+@use "../../../styles/abstract/variable" as *;
+
+.section {
+  background: var(--color-bg-primary);
+
+  :global(img) {
+    filter: none;
+  }
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 0.25em;
+}
+
+.slide {
+  height: auto;
+
+  :global(.swiper-slide-active) &,
+  & {
+    height: auto;
+  }
+
+  > a {
+    height: 100%;
+  }
+}
+
+.fallbackTrack {
+  width: 100%;
+  min-height: 22em;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.25em;
+  margin-top: 1.75em;
+
+  :global(.custom-swiper-navigation) {
+    align-self: center;
+    flex-shrink: 0;
+  }
+
+  @media #{$mob} {
+    justify-content: center;
+  }
+}

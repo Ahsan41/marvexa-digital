@@ -1,0 +1,151 @@
+@use "../../../styles/abstract/variable" as *;
+
+.section {
+  position: relative;
+  background:
+    radial-gradient(ellipse 60% 50% at 10% 50%, rgba(var(--color-brand-red-rgb), 0.035), transparent 60%),
+    var(--color-bg-secondary);
+  overflow: hidden;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: 4.5em;
+  align-items: center;
+
+  @media #{$ipad} {
+    grid-template-columns: 1fr;
+    gap: 2em;
+  }
+
+  @media #{$mobL} {
+    gap: 1.5em;
+  }
+}
+
+.media {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 28em;
+
+  @media #{$ipad} {
+    min-height: 22em;
+    max-width: 26.25em;
+    margin-inline: auto;
+    order: -1;
+  }
+
+  @media #{$mobL} {
+    min-height: 18em;
+  }
+}
+
+.blob {
+  position: absolute;
+  inset: 0 8% 8% 0;
+  z-index: 0;
+  border-radius: 46% 54% 48% 52% / 52% 42% 58% 48%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--color-bg-dark-elevated);
+  overflow: hidden;
+  transition: $transition;
+
+  @media #{$ipad} {
+    inset: 0 4% 10% 0;
+  }
+
+  @media #{$mobL} {
+    inset: 0 2% 12% 0;
+  }
+
+  @media #{$desktop} {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        border-radius: 42% 58% 55% 45% / 48% 52% 48% 52%;
+
+        .blobImage {
+          transform: scale(1.06);
+        }
+      }
+    }
+  }
+}
+
+.blobImage {
+  z-index: 1;
+  object-fit: cover;
+  object-position: center;
+  transition: $transition;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob,
+  .blobImage {
+    transition: none;
+  }
+
+  .blob:hover .blobImage {
+    transform: none;
+  }
+}
+
+.statChip {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  max-width: 12.5em;
+  padding: 1.125em 1.25em;
+  border-radius: 1em;
+  border: 1px solid var(--color-border-subtle);
+  background: rgba(var(--black-color-rgba), 0.88);
+  backdrop-filter: blur(0.75em);
+  box-shadow: 0 1.25em 2.5em rgba(0, 0, 0, 0.35);
+
+  @media #{$mobL} {
+    max-width: 11em;
+    padding: 0.875em 1em;
+  }
+
+  strong {
+    display: block;
+    margin-bottom: 0.25em;
+    font-size: 1.125rem;
+    color: var(--color-text-primary);
+  }
+
+  span {
+    font-size: 0.8125rem;
+    line-height: 1.4;
+    color: var(--color-text-secondary);
+  }
+}
+
+.copy {
+  max-width: 38.75em;
+
+  @media #{$desktop} {
+    padding-left: 1.5em;
+  }
+}
+
+.body {
+  margin: 0 0 1.25em;
+  font-size: 1.2rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+
+  @media #{$ipadpro} {
+    font-size: 1.125rem;
+  }
+
+  @media #{$mobL} {
+    font-size: 1.05rem;
+  }
+
+  &:last-of-type {
+    margin-bottom: 2em;
+  }
+}

@@ -1,0 +1,81 @@
+// Marvexa Digital design tokens — global values only.
+// Component-specific sizes live in component SCSS modules.
+
+:root {
+  // ——— Surfaces ———
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f5f4f1;
+  --color-bg-elevated: #ffffff;
+  --color-bg-dark: #111111;
+  --color-bg-dark-elevated: #1c1c1a;
+  --black-color: #111111;
+  --black-color-rgba: 17, 17, 17;
+  --white-color: #ffffff;
+  --white-color-rgba: 255, 255, 255;
+
+  // ——— Text ———
+  --color-text-primary: #171717;
+  --color-text-secondary: #55534f;
+  --color-text-muted: #77736d;
+  --slate-color: var(--color-text-secondary);
+  --slate-color-rgba: 85, 83, 79;
+
+  // ——— Borders ———
+  --color-border-subtle: rgba(23, 23, 23, 0.12);
+  --color-border-strong: rgba(23, 23, 23, 0.24);
+
+  // ——— Brand ———
+  --color-brand-red: #bd252d;
+  --color-brand-red-dark: #991d24;
+  --color-brand-red-rgb: 189, 37, 45;
+  --color-brand-gold: #a88955;
+  --color-brand-gold-rgb: 168, 137, 85;
+
+  // Shared UI aliases retained for existing utility classes.
+  --primary-color: var(--color-brand-red);
+  --primary-color-rgba: var(--color-brand-red-rgb);
+  --secondary-color: var(--color-brand-gold);
+  --secondary-color-rgba: var(--color-brand-gold-rgb);
+  --tertiary-color: var(--color-brand-gold);
+  --tertiary-color-rgba: var(--color-brand-gold-rgb);
+  --orange-color: var(--color-brand-gold);
+  --orange-color-rgba: var(--color-brand-gold-rgb);
+
+  // ——— Gradients ———
+  --gradient-brand: linear-gradient(
+    135deg,
+    var(--color-brand-red) 0%,
+    var(--color-brand-red-dark) 100%
+  );
+  --gradient-brand-soft: linear-gradient(
+    135deg,
+    rgba(var(--color-brand-red-rgb), 0.07) 0%,
+    rgba(var(--color-brand-gold-rgb), 0.08) 100%
+  );
+  --gradient-text: linear-gradient(
+    90deg,
+    var(--color-brand-red) 0%,
+    var(--color-brand-red-dark) 100%
+  );
+
+  // ——— Typography ———
+  --font-primary: var(--font-outfit), system-ui, sans-serif;
+  --Dubai: var(--font-primary);
+  --Dubai-font: var(--font-primary);
+
+  // ——— Motion (basic UI only) ———
+  --transition-ease: all 0.5s ease;
+  --transition-linear: all 0.5s linear;
+  --transition-bounce: all 0.3s cubic-bezier(0.47, 1.64, 0.41, 0.8);
+  --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+  --duration-fast: 200ms;
+  --duration-base: 400ms;
+
+  // ——— Shared UI ———
+  --radius-pill: 999px;
+  --color-focus: var(--color-brand-red);
+  --focus-ring: 0 0 0 2px var(--color-bg-primary), 0 0 0 4px var(--color-focus);
+
+  // Shared by Header + MobileMenu
+  --header-height: 5.5em;
+}

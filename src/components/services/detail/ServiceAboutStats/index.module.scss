@@ -1,0 +1,125 @@
+@use "../../../../styles/abstract/variable" as *;
+
+.section {
+  position: relative;
+  background:
+    radial-gradient(ellipse 50% 45% at 85% 20%, rgba(var(--color-brand-red-rgb), 0.14), transparent 55%),
+    radial-gradient(ellipse 40% 40% at 10% 90%, rgba(var(--color-brand-gold-rgb), 0.08), transparent 50%),
+    var(--color-bg-primary);
+  overflow: hidden;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 3.5em;
+  align-items: center;
+  margin-bottom: 3.5em;
+
+  @media #{$ipadpro} {
+    grid-template-columns: 1fr;
+    gap: 2.5em;
+    margin-bottom: 2.5em;
+  }
+}
+
+.copy {
+  min-width: 0;
+  max-width: 40em;
+}
+
+.body {
+  margin: 0 0 1.75em;
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+
+  @media #{$mobL} {
+    font-size: 1rem;
+  }
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.media {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 28em;
+
+  @media #{$ipadpro} {
+    min-height: 24em;
+    max-width: 32em;
+    margin-inline: auto;
+    order: -1;
+  }
+
+  @media #{$mobL} {
+    min-height: 18em;
+  }
+}
+
+.frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 1.75em;
+  overflow: hidden;
+  border: 1px solid rgba(var(--color-brand-red-rgb), 0.28);
+  background: var(--color-bg-dark-elevated);
+  transition: $transition;
+
+  @media #{$desktop} {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        border-color: rgba(var(--color-brand-gold-rgb), 0.45);
+        box-shadow: 0 0 2.5em rgba(var(--color-brand-red-rgb), 0.25);
+
+        .image {
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+  transition: $transition;
+}
+
+.glow {
+  position: absolute;
+  inset: auto -10% -20% auto;
+  width: 55%;
+  height: 55%;
+  background: radial-gradient(circle, rgba(var(--color-brand-red-rgb), 0.1), transparent 70%);
+  pointer-events: none;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25em;
+
+  @media #{$ipadpro} {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media #{$mob} {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .frame,
+  .image {
+    transition: none;
+  }
+}

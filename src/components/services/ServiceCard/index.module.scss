@@ -1,0 +1,444 @@
+@use "../../../styles/abstract/variable" as *;
+
+.card {
+  --image-scale: 1.02;
+  --image-shift: 0%;
+  --shade-boost: 0;
+  --aura-opacity: 0.4;
+  --border-opacity: 0.55;
+  --index-opacity: 0.78;
+  --title-shift: 0;
+  --arrow-shift: 0;
+  --cta-opacity: 0.82;
+  --cta-line: 0;
+  --sweep-x: -120%;
+  --glass-opacity: 0;
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 24em;
+  height: 100%;
+  padding: 1.35em 1.35em 1.4em;
+  border-radius: 1.375em;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  isolation: isolate;
+  background: var(--color-bg-dark);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1.1em 2.4em rgba(0, 0, 0, 0.3);
+  /* Stable card box — hover only drives image / glow / chrome. */
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      145deg,
+      rgba(var(--color-brand-red-rgb), 0.58),
+      rgba(255, 255, 255, 0.07) 42%,
+      rgba(var(--color-brand-gold-rgb), 0.42)
+    );
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: var(--border-opacity);
+    transition: $transition;
+    z-index: 5;
+  }
+
+  // Soft top rim highlight
+  &::after {
+    content: "";
+    position: absolute;
+    left: 12%;
+    right: 12%;
+    top: 0;
+    height: 1px;
+    z-index: 6;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.28),
+      transparent
+    );
+    opacity: 0.55;
+    pointer-events: none;
+    transition: $transition;
+  }
+
+  @media #{$mobL} {
+    min-height: 21em;
+    padding: 1.15em 1.1em 1.25em;
+    border-radius: 1.2em;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      --image-scale: 1.15;
+      --image-shift: -1.8%;
+      --shade-boost: 1;
+      --aura-opacity: 0.95;
+      --border-opacity: 1;
+      --index-opacity: 1;
+      --title-shift: -0.15em;
+      --arrow-shift: 0.28em;
+      --cta-opacity: 1;
+      --cta-line: 1;
+      --sweep-x: 130%;
+      --glass-opacity: 1;
+      box-shadow:
+        0 1.25em 2.6em rgba(0, 0, 0, 0.38),
+        0 0 2.25em rgba(var(--color-brand-red-rgb), 0.22);
+
+      &::after {
+        opacity: 0.9;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(var(--color-brand-red-rgb), 0.55),
+          rgba(var(--color-brand-gold-rgb), 0.45),
+          transparent
+        );
+      }
+
+      .index {
+        color: transparent;
+        background: var(--gradient-brand);
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+
+      .cornerArrow {
+        border-color: rgba(var(--color-brand-red-rgb), 0.55);
+        background: linear-gradient(
+          145deg,
+          rgba(var(--color-brand-red-rgb), 0.35),
+          rgba(var(--color-brand-gold-rgb), 0.22)
+        );
+        color: #fff;
+        box-shadow: 0 0 1.25em rgba(var(--color-brand-red-rgb), 0.35);
+      }
+
+      .cta {
+        color: var(--color-brand-gold);
+      }
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    --image-scale: 1.12;
+    --shade-boost: 1;
+    --aura-opacity: 0.85;
+    --border-opacity: 1;
+    --index-opacity: 1;
+    --cta-opacity: 1;
+    --cta-line: 1;
+    --glass-opacity: 1;
+    box-shadow: var(--focus-ring), 0 1.25em 2.5em rgba(0, 0, 0, 0.38);
+
+    .index {
+      color: transparent;
+      background: var(--gradient-brand);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .cta {
+      color: var(--color-brand-gold);
+    }
+  }
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.image {
+  object-fit: cover;
+  transform: scale(var(--image-scale)) translateY(var(--image-shift));
+  transition: $transition;
+  filter: saturate(1.05) contrast(1.04);
+}
+
+.posCenter {
+  object-position: center;
+}
+
+.posTop {
+  object-position: center 18%;
+}
+
+.posBottom {
+  object-position: center 78%;
+}
+
+.fallback {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 70% 25%, rgba(var(--color-brand-red-rgb), 0.45), transparent 45%),
+    radial-gradient(circle at 20% 80%, rgba(var(--color-brand-gold-rgb), 0.28), transparent 50%),
+    #111111;
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    radial-gradient(ellipse 95% 70% at 50% 0%, rgba(0, 0, 0, 0.22), transparent 55%),
+    linear-gradient(
+      180deg,
+      rgba(var(--black-color-rgba), 0.22) 0%,
+      rgba(var(--black-color-rgba), 0.12) 24%,
+      rgba(var(--black-color-rgba), 0.48) 52%,
+      rgba(var(--black-color-rgba), 0.92) 78%,
+      rgba(var(--black-color-rgba), 0.98) 100%
+    ),
+    radial-gradient(
+      ellipse 80% 50% at 50% 100%,
+      rgba(var(--color-brand-red-rgb), calc(0.14 + (var(--shade-boost) * 0.2))),
+      transparent 70%
+    );
+  transition: $transition;
+}
+
+.sweep {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    115deg,
+    transparent 28%,
+    rgba(255, 255, 255, 0.1) 48%,
+    transparent 64%
+  );
+  transform: translateX(var(--sweep-x));
+  transition: transform 0.85s ease;
+  mix-blend-mode: soft-light;
+  opacity: 0.75;
+}
+
+.aura {
+  position: absolute;
+  z-index: 1;
+  width: 68%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  pointer-events: none;
+  filter: blur(0.85em);
+  opacity: var(--aura-opacity);
+  transition: $transition;
+}
+
+.glowTl .aura {
+  inset: -28% auto auto -22%;
+  background: radial-gradient(circle, rgba(var(--color-brand-red-rgb), 0.48), transparent 68%);
+}
+
+.glowTr .aura {
+  inset: -30% -24% auto auto;
+  background: radial-gradient(circle, rgba(var(--color-brand-gold-rgb), 0.42), transparent 68%);
+}
+
+.glowBr .aura {
+  inset: auto -26% -32% auto;
+  background: radial-gradient(circle, rgba(var(--color-brand-red-rgb), 0.5), transparent 68%);
+}
+
+.top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.index {
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: rgba(255, 255, 255, 0.9);
+  opacity: var(--index-opacity);
+  transition: $transition;
+  text-shadow: 0 0.35em 1.25em rgba(0, 0, 0, 0.35);
+
+  @media #{$ipadpro} {
+    font-size: 2.25rem;
+  }
+
+  @media #{$mobL} {
+    font-size: 2rem;
+  }
+}
+
+.cornerArrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.1em;
+  height: 2.1em;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(0.6em);
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.75);
+  transform: translate(var(--arrow-shift), calc(var(--arrow-shift) * -1));
+  transition: $transition;
+
+  @media #{$mobL} {
+    width: 1.9em;
+    height: 1.9em;
+  }
+}
+
+.body {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.5em;
+  margin-top: auto;
+  max-width: 22em;
+  padding: 0.85em 0.9em 0.75em;
+  border-radius: 1em;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 8, 16, calc(0.18 + (var(--glass-opacity) * 0.22))),
+    rgba(8, 8, 16, calc(0.42 + (var(--glass-opacity) * 0.28)))
+  );
+  border: 1px solid rgba(255, 255, 255, calc(0.04 + (var(--glass-opacity) * 0.08)));
+  backdrop-filter: blur(calc(0.35em + (var(--glass-opacity) * 0.5em)));
+  box-shadow: 0 0.75em 1.75em rgba(0, 0, 0, calc(0.12 + (var(--glass-opacity) * 0.18)));
+  transition: $transition;
+
+  @media #{$mobL} {
+    padding: 0.75em 0.8em 0.65em;
+    border-radius: 0.85em;
+  }
+}
+
+.label {
+  margin: 0;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--color-brand-red);
+}
+
+.title {
+  margin: 0;
+  font-size: 1.55rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  color: var(--color-text-primary);
+  transform: translateY(var(--title-shift));
+  transition: $transition;
+
+  @media #{$ipadpro} {
+    font-size: 1.4rem;
+  }
+
+  @media #{$mobL} {
+    font-size: 1.28rem;
+  }
+}
+
+.description {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.72);
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  @media #{$mobL} {
+    font-size: 0.9rem;
+    -webkit-line-clamp: 3;
+  }
+}
+
+.cta {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  margin-top: 0.15em;
+  padding-bottom: 0.15em;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  opacity: var(--cta-opacity);
+  transition: $transition;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--gradient-brand);
+    transform: scaleX(var(--cta-line));
+    transform-origin: left;
+    transition: $transition;
+  }
+}
+
+.ctaArrow {
+  display: inline-flex;
+  font-size: 0.85em;
+  transform: translateX(var(--arrow-shift));
+  transition: $transition;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .image,
+  .shade,
+  .sweep,
+  .aura,
+  .index,
+  .cornerArrow,
+  .body,
+  .title,
+  .cta,
+  .ctaArrow {
+    transition: none;
+  }
+
+  .card {
+    --image-scale: 1.02 !important;
+    --image-shift: 0% !important;
+    --title-shift: 0 !important;
+    --arrow-shift: 0 !important;
+    --sweep-x: -120% !important;
+    --cta-line: 0 !important;
+  }
+}

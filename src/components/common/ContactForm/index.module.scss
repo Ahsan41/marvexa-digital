@@ -1,0 +1,113 @@
+@use "../../../styles/abstract/variable" as *;
+
+.formCard {
+  padding: 2.5em;
+  border-radius: 1.75em;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(160deg, #1d1d1b, #121212);
+  box-shadow: 0 1.875em 5em rgba(0, 0, 0, 0.35);
+
+  @media #{$mobL} {
+    padding: 1.5em 1.25em;
+  }
+}
+
+.formTitle {
+  margin: 0 0 0.625em;
+}
+
+.formDesc {
+  margin: 0 0 2em;
+  font-size: 0.9375em;
+  line-height: 1.55;
+  color: var(--color-text-secondary);
+}
+
+.form {
+  width: 100%;
+}
+
+.fields {
+  row-gap: 0.25em;
+  margin-bottom: 0.5em;
+}
+
+.field {
+  margin-bottom: 1.125em;
+
+  label {
+    display: block;
+    margin-bottom: 0.5em;
+    font-size: 0.8125em;
+    font-weight: 500;
+    color: var(--color-text-secondary);
+    transition: $transition;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 0.875em 1em;
+    font-family: var(--Dubai);
+    font-size: 1em;
+    color: var(--color-text-primary);
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--color-border-subtle);
+    border-radius: 0.75em;
+    transition: $transition;
+    box-sizing: border-box;
+
+    &::placeholder {
+      color: var(--color-text-muted);
+    }
+
+    @media #{$desktop} {
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          border-color: rgba(255, 255, 255, 0.18);
+          background: rgba(var(--color-brand-red-rgb), 0.04);
+        }
+      }
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--color-brand-red);
+      background: rgba(var(--color-brand-red-rgb), 0.07);
+      box-shadow:
+        0 0 0 1px rgba(var(--color-brand-red-rgb), 0.35),
+        0 0 1.25em rgba(var(--color-brand-red-rgb), 0.12);
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow:
+        var(--focus-ring),
+        0 0 1.25em rgba(var(--color-brand-red-rgb), 0.12);
+    }
+  }
+
+  &:focus-within label {
+    color: var(--color-brand-red);
+  }
+
+  textarea {
+    resize: vertical;
+    min-height: 8.75em;
+  }
+}
+
+.note {
+  margin: 1em 0 0;
+  font-size: 0.875em;
+  color: var(--color-text-muted);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .field input,
+  .field textarea,
+  .field label {
+    transition: none;
+  }
+}

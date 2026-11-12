@@ -1,0 +1,140 @@
+@use "../../../styles/abstract/variable" as *;
+
+.hero {
+  position: relative;
+  min-height: 58vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 8em 0 3.5em;
+  overflow: clip;
+
+  @media #{$mobL} {
+    min-height: 48vh;
+    padding: 7em 0 2.5em;
+  }
+}
+
+.media {
+  position: absolute;
+  inset: 0;
+}
+
+.image {
+  object-fit: cover;
+  object-position: center;
+}
+
+.shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(5, 5, 10, 0.5) 0%,
+    rgba(5, 5, 10, 0.82) 55%,
+    var(--color-bg-primary) 100%
+  );
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 42em;
+  text-align: left;
+  margin-inline: 0;
+}
+
+.title {
+  text-align: left;
+}
+
+.breadcrumbs {
+  margin: 0 0 1.25em;
+
+  @media #{$ipadpro} {
+    display: none;
+  }
+}
+
+.crumbList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35em 0.5em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+  line-height: 1.4;
+  color: var(--color-text-secondary);
+}
+
+.crumbItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+
+  &:not(:last-child)::after {
+    content: "/";
+    color: rgba(255, 255, 255, 0.35);
+  }
+
+  a {
+    color: var(--color-text-secondary);
+    text-decoration: none;
+    transition: $transition;
+
+    @media #{$desktop} {
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: var(--color-brand-red);
+        }
+      }
+    }
+  }
+
+  span[aria-current="page"] {
+    color: var(--color-text-primary);
+  }
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5em;
+  margin: 0 0 1em;
+  font-size: 0.75em;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brand-red);
+
+  &::before {
+    content: "";
+    width: 0.5em;
+    height: 0.5em;
+    border-radius: 50%;
+    background: var(--gradient-brand);
+  }
+}
+
+.lead {
+  margin: 1em 0 0;
+  max-width: 36em;
+  font-size: 1.2em;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+
+  @media #{$ipadpro} {
+    font-size: 1.1em;
+  }
+
+  @media #{$mobL} {
+    font-size: 1em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .crumbItem a {
+    transition: none;
+  }
+}

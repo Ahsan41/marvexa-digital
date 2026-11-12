@@ -1,0 +1,63 @@
+@use "../../../styles/abstract/variable" as *;
+
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--color-bg-primary);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  &::before {
+    width: min(40em, 68vw);
+    aspect-ratio: 1;
+    inset: -8% auto auto -12%;
+    background: radial-gradient(circle, rgba(var(--color-brand-red-rgb), 0.14), transparent 68%);
+  }
+
+  &::after {
+    width: min(34em, 58vw);
+    aspect-ratio: 1;
+    inset: auto -10% 8% auto;
+    background: radial-gradient(circle, rgba(var(--color-brand-gold-rgb), 0.1), transparent 68%);
+  }
+}
+
+.grid {
+  position: relative;
+  z-index: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 22em), 1fr));
+  gap: 1.5em;
+  align-items: stretch;
+
+  @media #{$ipadpro} {
+    gap: 1.35em;
+  }
+
+  @media #{$mobL} {
+    grid-template-columns: 1fr;
+    gap: 1.2em;
+  }
+}
+
+.item {
+  min-width: 0;
+  height: 100%;
+}
+
+.empty {
+  margin: 0;
+  text-align: center;
+  color: var(--color-text-secondary);
+}

@@ -1,0 +1,87 @@
+@use "../../../../styles/abstract/variable" as *;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  min-height: 100%;
+  padding: 2em 1.75em;
+  border-radius: 1.5em;
+  border: 1px solid var(--color-border-subtle);
+  background:
+    linear-gradient(165deg, rgba(28, 22, 48, 0.92), rgba(12, 12, 20, 0.95));
+  box-shadow: 0 1.25em 2.5em rgba(0, 0, 0, 0.28);
+  transition: $transition;
+
+  @media #{$mobL} {
+    padding: 1.5em 1.25em;
+    border-radius: 1.25em;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-color: rgba(var(--color-brand-red-rgb), 0.45);
+      translate: 0 -0.35em;
+      box-shadow:
+        0 1.75em 3em rgba(0, 0, 0, 0.35),
+        0 0 2.5em rgba(var(--color-brand-red-rgb), 0.18);
+    }
+  }
+}
+
+.copyCard {
+  background:
+    radial-gradient(ellipse 80% 60% at 10% 0%, rgba(var(--color-brand-red-rgb), 0.16), transparent 55%),
+    linear-gradient(165deg, rgba(28, 22, 48, 0.92), rgba(12, 12, 20, 0.95));
+}
+
+.statCard {
+  background:
+    radial-gradient(ellipse 70% 55% at 90% 10%, rgba(var(--color-brand-gold-rgb), 0.14), transparent 50%),
+    linear-gradient(165deg, rgba(24, 18, 40, 0.95), rgba(10, 10, 16, 0.96));
+}
+
+.title {
+  margin: 0;
+  color: var(--color-text-primary);
+}
+
+.value {
+  margin: 0;
+  font-size: 4.5rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  @media #{$ipadpro} {
+    font-size: 3.75rem;
+  }
+
+  @media #{$mobL} {
+    font-size: 3.25rem;
+  }
+}
+
+.description {
+  margin: 0;
+  margin-top: auto;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+
+  @media #{$mobL} {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card:hover {
+    transition: none !important;
+    translate: none !important;
+  }
+}

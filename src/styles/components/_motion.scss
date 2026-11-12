@@ -1,0 +1,243 @@
+/* Motion helpers — reveal states are toggled by IntersectionObserver.
+   After reveal completes, do NOT lock img transform — card hover owns scale. */
+
+html.js-motion .image-reveal,
+html.js-motion [data-image-reveal] {
+  overflow: hidden;
+}
+
+html.js-motion .image-reveal img,
+html.js-motion .image-reveal picture,
+html.js-motion .image-reveal video,
+html.js-motion [data-image-reveal] img,
+html.js-motion .image-reveal [data-reveal-media],
+html.js-motion [data-image-reveal] [data-reveal-media] {
+  will-change: transform, clip-path;
+}
+
+html.js-motion .reveal-item[data-reveal-ready="1"],
+html.js-motion [data-reveal-item][data-reveal-ready="1"] {
+  opacity: 0;
+  transition:
+    opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.js-motion .reveal-item[data-reveal-ready="1"][data-reveal-variant="up"],
+html.js-motion [data-reveal-item][data-reveal-ready="1"][data-reveal-variant="up"] {
+  transform: translate3d(0, 3.5rem, 0);
+}
+
+html.js-motion .reveal-item[data-reveal-ready="1"][data-reveal-variant="rise"],
+html.js-motion [data-reveal-item][data-reveal-ready="1"][data-reveal-variant="rise"] {
+  transform: translate3d(0, 4.5rem, 0);
+}
+
+html.js-motion .reveal-item[data-reveal-ready="1"][data-reveal-variant="left"],
+html.js-motion [data-reveal-item][data-reveal-ready="1"][data-reveal-variant="left"] {
+  transform: translate3d(-3rem, 0, 0);
+}
+
+html.js-motion .reveal-item[data-reveal-ready="1"][data-reveal-variant="right"],
+html.js-motion [data-reveal-item][data-reveal-ready="1"][data-reveal-variant="right"] {
+  transform: translate3d(3rem, 0, 0);
+}
+
+html.js-motion .reveal-item[data-reveal-ready="1"][data-reveal-variant="scale"],
+html.js-motion [data-reveal-item][data-reveal-ready="1"][data-reveal-variant="scale"] {
+  transform: translate3d(0, 2rem, 0) scale(0.96);
+}
+
+html.js-motion .reveal-item[data-reveal-ready="1"][data-reveal-visible="1"],
+html.js-motion [data-reveal-item][data-reveal-ready="1"][data-reveal-visible="1"] {
+  opacity: 1;
+  transform: none;
+}
+
+/* Masked word reveal (data-text-reveal) */
+.tr-word {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: baseline;
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+.tr-word-inner {
+  display: inline-block;
+  will-change: transform;
+}
+
+html.js-motion [data-text-reveal][data-text-reveal-ready="1"] .tr-word-inner {
+  transform: translate3d(0, 105%, 0);
+  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.js-motion
+  [data-text-reveal][data-text-reveal-ready="1"][data-text-reveal-visible="1"]
+  .tr-word-inner,
+html.js-motion [data-text-reveal][data-text-reveal-visible="1"] .tr-word-inner {
+  transform: translate3d(0, 0, 0);
+}
+
+.has-text-reveal {
+  /* Keep gradient text clipping on accent spans inside headings */
+}
+
+html.js-motion .image-reveal[data-image-reveal-ready="1"],
+html.js-motion [data-image-reveal][data-image-reveal-ready="1"] {
+  overflow: hidden;
+}
+
+html.js-motion .image-reveal img,
+html.js-motion .image-reveal picture,
+html.js-motion .image-reveal video,
+html.js-motion .image-reveal [data-reveal-media],
+html.js-motion [data-image-reveal] img,
+html.js-motion [data-image-reveal] picture,
+html.js-motion [data-image-reveal] video,
+html.js-motion [data-image-reveal] [data-reveal-media] {
+  transform-origin: center center;
+  transition:
+    clip-path 1s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.45s ease;
+}
+
+/* Wipe only while waiting to enter — never after visible (hover needs transform) */
+html.js-motion
+  .image-reveal[data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="up"]
+  img,
+html.js-motion
+  .image-reveal[data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="up"]
+  picture,
+html.js-motion
+  .image-reveal[data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="up"]
+  video,
+html.js-motion
+  .image-reveal[data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="up"]
+  [data-reveal-media],
+html.js-motion
+  [data-image-reveal][data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="up"]
+  img,
+html.js-motion
+  [data-image-reveal][data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="up"]
+  picture,
+html.js-motion
+  [data-image-reveal][data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="up"]
+  video,
+html.js-motion
+  [data-image-reveal][data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="up"]
+  [data-reveal-media] {
+  clip-path: inset(100% 0 0 0);
+  transform: scale(1.14);
+}
+
+html.js-motion
+  .image-reveal[data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="left"]
+  img,
+html.js-motion
+  .image-reveal[data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="left"]
+  picture,
+html.js-motion
+  .image-reveal[data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="left"]
+  video,
+html.js-motion
+  .image-reveal[data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="left"]
+  [data-reveal-media],
+html.js-motion
+  [data-image-reveal][data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="left"]
+  img,
+html.js-motion
+  [data-image-reveal][data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="left"]
+  picture,
+html.js-motion
+  [data-image-reveal][data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="left"]
+  video,
+html.js-motion
+  [data-image-reveal][data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="left"]
+  [data-reveal-media] {
+  clip-path: inset(0 100% 0 0);
+  transform: scale(1.14);
+}
+
+html.js-motion
+  .image-reveal[data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="scale"]
+  img,
+html.js-motion
+  .image-reveal[data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="scale"]
+  picture,
+html.js-motion
+  .image-reveal[data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="scale"]
+  video,
+html.js-motion
+  .image-reveal[data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="scale"]
+  [data-reveal-media],
+html.js-motion
+  [data-image-reveal][data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="scale"]
+  img,
+html.js-motion
+  [data-image-reveal][data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="scale"]
+  picture,
+html.js-motion
+  [data-image-reveal][data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="scale"]
+  video,
+html.js-motion
+  [data-image-reveal][data-image-reveal-ready="1"]:not([data-image-reveal-visible="1"])[data-image-reveal-variant="scale"]
+  [data-reveal-media] {
+  clip-path: inset(8% 8% 8% 8%);
+  transform: scale(1.08);
+}
+
+html.js-motion .image-reveal[data-image-reveal-visible="1"] img,
+html.js-motion .image-reveal[data-image-reveal-visible="1"] picture,
+html.js-motion .image-reveal[data-image-reveal-visible="1"] video,
+html.js-motion .image-reveal[data-image-reveal-visible="1"] [data-reveal-media],
+html.js-motion [data-image-reveal][data-image-reveal-visible="1"] img,
+html.js-motion [data-image-reveal][data-image-reveal-visible="1"] picture,
+html.js-motion [data-image-reveal][data-image-reveal-visible="1"] video,
+html.js-motion [data-image-reveal][data-image-reveal-visible="1"] [data-reveal-media] {
+  clip-path: inset(0 0 0 0);
+  /* Intentionally no transform — component hover scales the image */
+}
+
+/* Custom cursor — hide system cursor when CustomCursor is active (desktop only) */
+html.has-custom-cursor,
+html.has-custom-cursor body,
+html.has-custom-cursor a,
+html.has-custom-cursor button {
+  cursor: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.js-motion .image-reveal img,
+  html.js-motion [data-image-reveal] img,
+  html.js-motion .reveal-item,
+  html.js-motion [data-reveal-item],
+  .tr-word-inner {
+    will-change: auto !important;
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+}
+
+/* Kill card-box hover lift on coarse / no-hover devices — do NOT kill img scale on width alone */
+@media (hover: none), (pointer: coarse) {
+  a:hover,
+  button:hover,
+  .btnn:hover,
+  .btnn:focus-visible,
+  [role="button"]:hover {
+    transform: none !important;
+  }
+}
+
+@media #{$ipadpro} {
+  a:hover,
+  button:hover,
+  .btnn:hover,
+  .btnn:focus-visible,
+  [role="button"]:hover {
+    transform: none !important;
+  }
+}

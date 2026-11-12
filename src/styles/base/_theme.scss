@@ -1,0 +1,542 @@
+body {
+  font-family: var(--Dubai);
+  font-weight: 400;
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  line-height: 1.14;
+}
+
+.theme-dark {
+  --color-bg-primary: var(--color-bg-dark);
+  --color-bg-secondary: #171716;
+  --color-bg-elevated: var(--color-bg-dark-elevated);
+  --color-text-primary: #ffffff;
+  --color-text-secondary: rgba(255, 255, 255, 0.76);
+  --color-text-muted: rgba(255, 255, 255, 0.58);
+  --color-border-subtle: rgba(255, 255, 255, 0.14);
+  --color-border-strong: rgba(255, 255, 255, 0.26);
+  --focus-ring: 0 0 0 2px var(--color-bg-dark), 0 0 0 4px var(--color-focus);
+
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-dark);
+}
+
+// .loadjs {
+//   overflow: hidden;
+// }
+
+.img-wrapper {
+  position: relative;
+  z-index: 1;
+}
+
+.container-fluid {
+  max-width: 100%;
+  padding: 0 2.25em;
+
+  @media #{$mobL} {
+    padding: 0 1.25em;
+  }
+}
+
+.container-s {
+  max-width: 100%;
+  padding: 0 6.770833%;
+
+  @media #{$ipad} {
+    padding: 0 3em;
+  }
+
+  @media #{$mobL} {
+    padding: 0 1.25em;
+  }
+}
+
+.container {
+  max-width: 90em; // ~1440px content — more side breathing room on large screens
+  width: 100%;
+  margin-inline: auto;
+  padding: 0 6%;
+
+  @media #{$desktop-lg} {
+    padding: 0 5em;
+  }
+
+  @media #{$ipadpro} {
+    padding: 0 3.75em;
+  }
+
+  @media #{$ipad} {
+    padding: 0 2.5em;
+  }
+
+  @media #{$mobL} {
+    padding: 0 1.25em;
+  }
+}
+
+.section-py-50 {
+  position: relative;
+  padding: 1.25em 0;
+
+  @media #{$tab} {
+    padding: 1.5em 0;
+  }
+
+  @media #{$desktop} {
+    padding: 3.125em 0; // 50px
+  }
+}
+
+.section-py-100 {
+  position: relative;
+  padding: 2.5em 0;
+
+  @media #{$tab} {
+    padding: 3em 0;
+  }
+
+  @media #{$desktop} {
+    padding: 6.25em 0; // 100px
+  }
+}
+
+.section-py-120 {
+  position: relative;
+  padding: 3.25em 0;
+
+  @media #{$tabL} {
+    padding: 4.25em 0;
+  }
+
+  @media #{$ipadL} {
+    padding: 5.5em 0;
+  }
+
+  @media #{$desktop} {
+    padding: 7.5em 0;
+  }
+
+  @media #{$mobL} {
+    padding: 2.75em 0;
+  }
+}
+
+.section-py-140 {
+  position: relative;
+  padding: 2.5em 0;
+
+  @media #{$tab} {
+    padding: 3em 0;
+  }
+
+  @media #{$desktop} {
+    padding: 8.75em 0;
+  }
+}
+
+.section-py-190 {
+  position: relative;
+  padding: 2.5em 0;
+
+  @media #{$tab} {
+    padding: 3em 0;
+  }
+
+  @media #{$desktop} {
+    padding: 11.875em 0;
+  }
+}
+
+// if there is no background on section
+.section-my-50 {
+  position: relative;
+  margin: 1.25em 0;
+
+  @media #{$tab} {
+    margin: 1.5em 0;
+  }
+
+  @media #{$desktop} {
+    margin: 3.125em 0; // 50px
+  }
+}
+
+.section-my-100 {
+  position: relative;
+  margin: 2.5em 0;
+
+  @media #{$tab} {
+    margin: 3em 0;
+  }
+
+  @media #{$desktop} {
+    margin: 6.25em 0;
+  }
+}
+
+.section-my-120 {
+  position: relative;
+  margin: 2.5em 0;
+
+  @media #{$tab} {
+    margin: 3em 0;
+  }
+
+  @media #{$desktop} {
+    margin: 7.5em 0;
+  }
+}
+
+.section-my-140 {
+  position: relative;
+  margin: 2.5em 0;
+
+  @media #{$tab} {
+    margin: 3em 0;
+  }
+
+  @media #{$desktop} {
+    margin: 8.75em 0;
+  }
+}
+
+.section-my-190 {
+  position: relative;
+  margin: 2.5em 0;
+
+  @media #{$tab} {
+    margin: 3em 0;
+  }
+
+  @media #{$desktop} {
+    margin: 11.875em 0;
+  }
+}
+
+.element-lg-left-zero {
+  @media #{$ipadL} {
+    margin-left: -4em;
+  }
+
+  @media #{$desktop} {
+    margin-left: -4.6875em;
+  }
+}
+
+.element-lg-right-zero {
+  @media #{$ipadL} {
+    margin-right: -5em;
+  }
+
+  @media #{$desktop} {
+    margin-right: -4.6875em;
+  }
+}
+
+.element-right-zero {
+  @media #{$desktop} {
+    margin-right: -4.6875em;
+  }
+
+  @media #{$ipadpro} {
+    margin-right: -4em;
+  }
+
+  @media #{$ipad} {
+    margin-right: -3em;
+  }
+
+  @media #{$mobL} {
+    margin-right: -1em;
+  }
+}
+
+.element-md-right-zero {
+  @media #{$tabL} {
+    margin-right: -5em;
+  }
+
+  @media #{$desktop} {
+    margin-right: -4.6875em;
+  }
+}
+
+.custom-richtext {
+  p {
+    font-size: 1.25em;
+    font-weight: 400;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin-bottom: 0.775em;
+
+    @media #{$ipadpro} {
+      line-height: 1.25;
+    }
+  }
+
+  ul {
+    @media #{$mob} {
+      padding-left: 2em;
+    }
+  }
+
+  li {
+    font-size: 0.8325em;
+    font-weight: 400;
+    list-style: none;
+    position: relative;
+    margin-bottom: 1em;
+
+    @media #{$mob} {
+      font-size: 1.25em;
+    }
+
+    &:before {
+      background: var(--gradient-brand);
+      content: "";
+      position: absolute;
+      left: -1.25em;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 7px;
+      height: 7px;
+      border-radius: 100%;
+    }
+  }
+}
+
+// plus sign
+// .plus-sign {
+//   @media (max-width: 767px) {
+//     position: relative;
+//     transition: $transition;
+//     &::before {
+//       content: "";
+//       position: absolute;
+//       width: 2px;
+//       height: 13px;
+//       background: rgba(var(--primary-color), 1);
+//       right: 12px;
+//       top: 33%;
+//       transform: translateY(-50%);
+//       transition: $transition;
+//       transform-origin: 0 top;
+//     }
+
+//     &::after {
+//       content: "";
+//       position: absolute;
+//       width: 13px;
+//       height: 2px;
+//       background: rgba(var(--primary-color), 1);
+//       right: 0px;
+//       top: 33%;
+//       transform: translate(-50%, -50%);
+//       transition: $transition;
+//     }
+
+//     &.opened {
+//       &::before {
+//         transform: rotate(90deg) translateY(-50%);
+//       }
+
+//       &::after {
+//         transform: rotate(90deg) translate(-50%, -50%);
+//         opacity: 0;
+//       }
+//     }
+//   }
+// }
+
+// .custom-scroll-bar {
+//   scrollbar-width: thin;
+//   scrollbar-color: rgba(237, 28, 36, 1) rgba(237, 28, 36, 0.3);
+
+//   &::-webkit-scrollbar {
+//     width: 5px;
+//   }
+
+//   &::-webkit-scrollbar-track {
+//     background-color: rgba(237, 28, 36, 0.3);
+//     -webkit-border-radius: 10px;
+//     border-radius: 10px;
+//   }
+
+//   &::-webkit-scrollbar-thumb {
+//     background-color: #ed1c24;
+//     border-radius: 8px;
+//     border: 2px solid #ed1c24;
+//   }
+// }
+
+// Shared Swiper prev/next chrome — custom buttons only (no Swiper default classes / glyphs)
+// Wire via Navigation: prevEl/nextEl → `.custom-prev` / `.custom-next` + SvgComp icons
+.custom-swiper-navigation {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25em;
+
+  @media #{$ipadpro} {
+    z-index: 1;
+    padding: 0;
+    gap: 0.5em;
+  }
+
+  @media #{$mob} {
+    justify-content: center;
+    margin-inline: auto;
+  }
+
+  .custom-prev,
+  .custom-next {
+    position: static;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    width: 3.4375em;
+    flex: 0 0 3.4375em;
+    height: 3.4375em;
+    border-radius: 3.4375em;
+    border: 1px solid var(--primary-color);
+    background: var(--primary-color);
+    color: var(--white-color);
+    cursor: pointer;
+    appearance: none;
+    transition: $transition;
+
+    @media #{$ipadpro} {
+      width: 2.5em;
+      flex: 0 0 2.5em;
+      height: 2.5em;
+    }
+
+    // Never show Swiper's default ::after chevron if a leftover class sneaks in
+    &::after,
+    &::before {
+      display: none !important;
+      content: none !important;
+    }
+
+    svg {
+      width: 1.125em;
+      height: 1.125em;
+      display: block;
+      flex-shrink: 0;
+
+      @media #{$ipadpro} {
+        width: 1em;
+        height: 1em;
+      }
+    }
+
+    path {
+      fill: currentColor;
+    }
+
+    @media #{$desktop} {
+      @media (hover: hover) and (pointer: fine) {
+        &:hover:not(.swiper-button-disabled):not(:disabled) {
+          background: var(--secondary-color);
+          border-color: var(--secondary-color);
+          color: var(--white-color);
+        }
+      }
+    }
+
+    // Swiper still toggles this class on custom els
+    &.swiper-button-disabled,
+    &:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+
+    &:focus-visible {
+      outline: none;
+      box-shadow: var(--focus-ring);
+    }
+  }
+}
+
+// Inline arrow icons (SvgComp) — size via font-size / em on the host
+.svg-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  line-height: 0;
+  color: inherit;
+
+  svg {
+    width: 1em;
+    height: 1em;
+    display: block;
+  }
+
+  path {
+    fill: currentColor;
+  }
+
+  &--up-right {
+    transform: rotate(-45deg);
+  }
+}
+
+
+html[lang="ar"] {
+  .element-right-zero {
+    @media #{$desktop} {
+      margin-left: -4.6875em;
+      margin-right: 0;
+    }
+
+    @media #{$ipadpro} {
+      margin-left: -4em;
+    }
+
+    @media #{$ipad} {
+      margin-left: -3em;
+    }
+
+    @media #{$mobL} {
+      margin-left: -1em;
+    }
+  }
+
+  .custom-richtext {
+
+    ul {
+      @media #{$mob} {
+        padding-right: 2em;
+        padding-left: 0;
+      }
+    }
+
+    li {
+      &:before {
+        right: -1.25em;
+        left: auto;
+      }
+    }
+  }
+
+  .element-md-right-zero {
+    @media #{$tabL} {
+      margin-left: -5em;
+      margin-right: auto;
+    }
+
+    @media #{$desktop} {
+      margin-left: -4.6875em;
+    }
+  }
+}

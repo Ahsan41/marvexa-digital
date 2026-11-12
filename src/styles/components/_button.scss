@@ -1,0 +1,211 @@
+@import "../abstract/variable";
+
+// Existing DG underline link styles — preserved
+.w-uline {
+  position: relative;
+  text-decoration: none;
+  display: inline-block;
+  transition: $transition;
+
+  @media #{$ipadpro} {
+    font-size: 1em;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -0.19em;
+    width: 100%;
+    height: 1px;
+    background: var(--primary-color);
+    transform: scaleX(0);
+    transition: $transition;
+  }
+
+  @media #{$desktop} {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        &::after {
+          transform: scaleX(1);
+        }
+      }
+    }
+  }
+}
+
+.uline {
+  @extend .w-uline;
+
+  &::after {
+    transform: scaleX(1);
+    background: var(--primary-color);
+  }
+
+  @media #{$desktop} {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        &::after {
+          transform: scaleX(0);
+        }
+      }
+    }
+  }
+}
+
+// Global button variants use the red accent and restrained neutral treatments.
+.btnn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  width: max-content;
+  max-width: 100%;
+  padding: 0.85em 1.75em;
+  font-family: var(--Dubai);
+  font-size: 1.125em;
+  font-weight: 500;
+  line-height: 1.2;
+  text-transform: capitalize;
+  text-decoration: none;
+  color: var(--white-color);
+  background: var(--color-brand-red);
+  border: 1px solid transparent;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: $transition;
+  position: relative;
+  z-index: 1;
+
+  @media #{$ipad} {
+    font-size: 1em;
+    padding: 0.75em 1.4em;
+  }
+
+  @media #{$mobL} {
+    font-size: 0.9375em;
+    padding: 0.7em 1.25em;
+  }
+
+  @media #{$desktop} {
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        color: var(--white-color);
+        background: var(--color-brand-red-dark);
+        box-shadow: 0 0.5em 1.25em rgba(var(--color-brand-red-rgb), 0.2);
+        transform: translateY(-0.125em);
+      }
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    color: var(--white-color);
+    background: var(--color-brand-red-dark);
+    box-shadow: var(--focus-ring);
+  }
+
+  &:disabled,
+  &[aria-disabled="true"] {
+    opacity: 0.45;
+    pointer-events: none;
+    cursor: not-allowed;
+  }
+
+  // Explicit primary modifier (same look as bare `.btnn`)
+  &--primary {
+    background: var(--color-brand-red);
+    color: var(--white-color);
+  }
+
+  // White button for use on dark or image-backed surfaces.
+  &--secondary {
+    background: var(--white-color);
+    border-color: rgba(255, 255, 255, 0.92);
+    color: #171717;
+    box-shadow: 0 0.35em 1.25em rgba(0, 0, 0, 0.18);
+
+    @media #{$desktop} {
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: var(--white-color);
+          background: var(--color-brand-red);
+          border-color: transparent;
+          box-shadow: 0 0.5em 1.25em rgba(var(--color-brand-red-rgb), 0.2);
+          transform: translateY(-0.125em);
+        }
+      }
+    }
+
+    &:focus-visible {
+      color: var(--white-color);
+      background: var(--color-brand-red);
+      border-color: transparent;
+      box-shadow: var(--focus-ring);
+    }
+  }
+
+  // Ghost / text — transparent shell, red accent on hover.
+  &--ghost,
+  &--text {
+    background: transparent;
+    border-color: var(--color-border-strong);
+    color: var(--color-text-primary);
+    box-shadow: none;
+
+    @media #{$desktop} {
+      @media (hover: hover) and (pointer: fine) {
+        &:hover {
+          color: var(--white-color);
+          background: var(--color-brand-red);
+          border-color: transparent;
+          box-shadow: 0 0.5em 1.25em rgba(var(--color-brand-red-rgb), 0.2);
+          transform: translateY(-0.125em);
+        }
+      }
+    }
+
+    &:focus-visible {
+      color: var(--white-color);
+      background: var(--color-brand-red);
+      border-color: transparent;
+      box-shadow: var(--focus-ring);
+    }
+  }
+
+  &--text {
+    padding-inline: 0.5em;
+    border-color: transparent;
+  }
+
+  &__icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    line-height: 0;
+    color: inherit;
+
+    svg,
+    img {
+      width: 1em;
+      height: 1em;
+      display: block;
+    }
+
+    path {
+      fill: currentColor;
+    }
+  }
+
+  &__label {
+    display: inline-block;
+  }
+}
+
+.btnn-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+  align-items: center;
+}

@@ -1,0 +1,199 @@
+// Display — large editorial headline (hero-scale)
+.display,
+.h-display {
+  font-size: 5em;
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  margin: 0 0 0.35em 0;
+  color: var(--color-text-primary);
+
+  @media #{$ipadpro} {
+    font-size: 3.5em;
+  }
+
+  @media #{$mobL} {
+    font-size: 2.5em;
+  }
+}
+
+h1,
+.h1 {
+  font-size: 4em;
+  font-weight: 700;
+  margin: 0 0 0.4em 0;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--color-text-primary);
+
+  @media #{$ipadpro} {
+    font-size: 3em;
+  }
+
+  @media #{$mobL} {
+    font-size: 2em;
+  }
+}
+
+h2,
+.h2 {
+  font-size: 3em;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+  margin: 0 0 0.5em 0;
+  color: var(--color-text-primary);
+
+  @media #{$ipadpro} {
+    font-size: 2.5em;
+  }
+
+  @media #{$mobL} {
+    font-size: 1.8em;
+  }
+}
+
+h3,
+.h3 {
+  font-size: 1.875em;
+  font-weight: 700;
+  line-height: 1.15;
+  margin: 0 0 0.5em 0;
+  color: var(--color-text-primary);
+
+  @media #{$ipad} {
+    font-size: 1.5em;
+  }
+
+  @media #{$mobL} {
+    font-size: 1.35em;
+  }
+}
+
+h4,
+.h4 {
+  font-size: 1.625em;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5em 0;
+  color: var(--color-text-primary);
+
+  @media #{$mobL} {
+    font-size: 1.35em;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 1.5em;
+  font-weight: 500;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.5em 0;
+  color: var(--color-text-primary);
+
+  @media #{$ipadpro} {
+    font-size: 1.25em;
+  }
+
+  @media #{$mob} {
+    font-size: 1.15em;
+    font-weight: 700;
+  }
+}
+
+h6,
+.h6 {
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0 0 0.5em 0;
+  color: var(--color-text-secondary);
+}
+
+.p-lg,
+.body-lg {
+  font-size: 1.5em;
+  font-weight: 400;
+  line-height: 1.35;
+  margin: 0 0 1.2em 0;
+  color: var(--color-text-secondary);
+
+  @media #{$ipadpro} {
+    font-size: 1.15em;
+    margin-bottom: 1em;
+  }
+}
+
+p,
+.p,
+.body {
+  font-size: 1.125em;
+  font-weight: 400;
+  line-height: 1.55;
+  margin: 0 0 1.2em 0;
+  color: var(--color-text-secondary);
+
+  @media #{$ipadpro} {
+    font-size: 1em;
+    margin-bottom: 1em;
+  }
+
+  &.font-20 {
+    font-size: 1.25em;
+    line-height: 1.35;
+  }
+
+  &.p-lg {
+    font-size: 1.5em;
+    line-height: 1.35;
+
+    @media #{$ipadpro} {
+      font-size: 1.15em;
+    }
+  }
+
+  b,
+  strong {
+    font-weight: 700;
+    color: var(--color-text-primary);
+  }
+}
+
+.small,
+.text-small {
+  font-size: 1em;
+  font-weight: 400;
+  line-height: 1.5;
+  color: var(--color-text-secondary);
+}
+
+.caption,
+.text-caption {
+  font-size: 0.875em;
+  font-weight: 400;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.label,
+.text-label {
+  font-size: 0.8125em;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.text-gradient {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+p + .btnn {
+  margin-top: 0.5em;
+}

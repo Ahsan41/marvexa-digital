@@ -1,0 +1,110 @@
+@use "../../../styles/abstract/variable" as *;
+
+.section {
+  position: relative;
+  background:
+    radial-gradient(ellipse 70% 50% at 85% 20%, rgba(var(--color-brand-red-rgb), 0.035), transparent 55%),
+    radial-gradient(ellipse 50% 40% at 10% 80%, rgba(var(--color-brand-gold-rgb), 0.03), transparent 50%),
+    var(--color-bg-primary);
+  overflow: clip;
+}
+
+.plainSurface {
+  background: var(--color-bg-primary);
+}
+
+.head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 2.5em;
+  margin-bottom: 1em;
+
+  @media #{$ipad} {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5em;
+  }
+}
+
+.headingBlock {
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.stat {
+  text-align: right;
+  flex-shrink: 0;
+  padding-bottom: 2.5em;
+
+  @media #{$ipad} {
+    text-align: left;
+    padding-bottom: 0;
+  }
+}
+
+.statValue {
+  margin: 0;
+  font-size: 6em;
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  @media #{$ipadpro} {
+    font-size: 4.5em;
+  }
+
+  @media #{$mobL} {
+    font-size: 3.5em;
+  }
+
+  span {
+    font-size: 0.45em;
+    vertical-align: super;
+  }
+}
+
+.statLabel {
+  margin: 0.625em 0 0;
+  font-size: 0.8125em;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.swiper {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 0.25em;
+}
+
+.slide {
+  height: auto;
+}
+
+.fallbackTrack {
+  width: 100%;
+  min-height: 18em;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.25em;
+  margin-top: 1.75em;
+
+  @media #{$mob} {
+    justify-content: center;
+  }
+}

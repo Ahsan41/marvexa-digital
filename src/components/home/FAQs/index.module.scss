@@ -1,0 +1,41 @@
+@use "../../../styles/abstract/variable" as *;
+
+.section {
+  background: var(--color-bg-secondary);
+  border-block: 1px solid var(--color-border-subtle);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: 4em;
+
+  @media #{$ipad} {
+    grid-template-columns: 1fr;
+    gap: 1.75em;
+  }
+
+  @media #{$mobL} {
+    gap: 1.25em;
+  }
+}
+
+.headingCol {
+  position: sticky;
+  top: calc(var(--header-height) + 1.5em);
+  align-self: start;
+
+  @media #{$ipad} {
+    position: static;
+  }
+}
+
+.faqHeading {
+  max-width: none;
+  margin-bottom: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}

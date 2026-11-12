@@ -1,0 +1,43 @@
+@use "../../../styles/abstract/variable" as *;
+
+.section {
+  position: relative;
+  background:
+    radial-gradient(ellipse 45% 40% at 0% 20%, rgba(var(--color-brand-red-rgb), 0.12), transparent 55%),
+    var(--color-bg-secondary);
+  overflow: hidden;
+}
+
+.heading {
+  max-width: 28em;
+  margin-bottom: 3em;
+
+  @media #{$mobL} {
+    margin-bottom: 2em;
+  }
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 1.1em;
+    top: 0.5em;
+    bottom: 0.5em;
+    width: 1px;
+    background: linear-gradient(
+      180deg,
+      rgba(var(--color-brand-red-rgb), 0.55),
+      rgba(var(--color-brand-gold-rgb), 0.35),
+      rgba(var(--color-brand-red-rgb), 0.15)
+    );
+
+    @media #{$mobL} {
+      left: 0.85em;
+    }
+  }
+}

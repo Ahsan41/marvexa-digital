@@ -1,0 +1,920 @@
+// Shared Swiper arrow chrome: see `.custom-swiper-navigation` in base/_theme.scss
+
+.hero-banner {
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.news-slider-main-wrapper {
+  cursor: url("/svgs/cursor.svg"), pointer;
+  transition: all var(--transition-ease);
+
+  .swiper {
+    padding-bottom: 3em;
+
+    // @media #{$mobL} {
+    //   padding-bottom: 0;
+    // }
+  }
+
+  .swiper-scrollbar-drag {
+    background: var(--primary-color);
+  }
+
+  .swiper-scrollbar.swiper-scrollbar-horizontal {
+    height: 0.375em;
+
+    // @media #{$mobL} {
+    //   display: none;
+    // }
+  }
+}
+
+// hero home banner
+.hero-banner {
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 3.1875em;
+    height: 3.1875em;
+    flex: 0 0 3.1875em;
+    border: 1px solid var(--white-color);
+    border-radius: 50%;
+    background: rgba(var(--white-color-rgba), 0.1);
+    position: static;
+    margin: 0;
+    transition: var(--transition-ease);
+
+    &:hover {
+      background: var(--primary-color);
+    }
+
+    @media #{$mobL} {
+      width: 2.4285em;
+      height: 2.4285em;
+      flex: 0 0 2.4285em;
+    }
+  }
+
+  .swiper-button-prev::after,
+  .swiper-rtl .swiper-button-next::after {
+    font-size: 1em;
+    content: "";
+    background: url("/svgs/left-swiper-icon.svg") center/contain no-repeat;
+    width: 0.5em;
+    height: 0.875em;
+  }
+
+  .swiper-button-next::after,
+  .swiper-rtl .swiper-button-prev::after {
+    font-size: 1em;
+    content: "";
+    background: url("/svgs/right-swiper-icon.svg") center/contain no-repeat;
+    width: 0.5em;
+    height: 0.875em;
+  }
+
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: auto;
+  }
+
+  .swiper-pagination-bullets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    z-index: 9;
+
+    .swiper-pagination-bullet-active {
+      height: 1.875em !important;
+      background: var(--white-color) !important;
+    }
+
+    .swiper-pagination-bullet {
+      width: 0.25em;
+      height: 0.9375em;
+      border-radius: 0.625em;
+      background: rgba(var(--white-color-rgba), 0.2);
+      opacity: 1;
+    }
+  }
+
+  .custom-navigation-and-pagination {
+    position: absolute;
+    z-index: 2;
+    bottom: 5.125em;
+    display: flex;
+    align-items: center;
+    min-width: 14.1875em;
+    right: 14.0625em;
+    gap: 2.4375em;
+
+    @media #{$ipad} {
+      right: 4.0625em;
+    }
+
+    @media #{$mobL} {
+      right: unset;
+      left: 4em;
+      bottom: 2.07142em;
+    }
+  }
+
+  .swiper-slide {
+    .hero-banner__text-content {
+      .anim-title-wrapper {
+        overflow: hidden;
+
+        .h1 {
+          transform: translateY(120%);
+          transition: var(--transition-bounce);
+          transition-delay: 0.5s;
+
+          @media #{$mob} {
+            font-size: 2.72em;
+            font-weight: 500;
+          }
+        }
+      }
+
+      .anim-desc-wrapper {
+        overflow: hidden;
+
+        .p {
+          transform: translateY(150%);
+          transition: var(--transition-bounce);
+          transition-delay: 0.7s;
+
+          @media #{$mob} {
+            font-size: 1.15em;
+          }
+        }
+      }
+
+      .anim-btn-wrapper {
+        overflow: hidden;
+
+        .btnn {
+          transform: translateY(150%);
+          transition: var(--transition-bounce);
+          transition-delay: 0.9s;
+        }
+      }
+    }
+
+    &-active {
+      .hero-banner__text-content {
+        .anim-title-wrapper {
+          .h1 {
+            transform: translateY(0);
+          }
+        }
+
+        .anim-desc-wrapper {
+          .p {
+            transform: translateY(0);
+          }
+        }
+
+        .anim-btn-wrapper {
+          .btnn {
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+  }
+}
+
+.news-award-slider {
+  position: relative;
+
+  .swiper {
+    padding: 0.2em;
+  }
+
+  .custom-navigation {
+    flex-direction: column-reverse;
+    position: absolute;
+    bottom: 0;
+    left: -4em;
+
+    @media #{$ipad} {
+      display: none;
+    }
+  }
+
+  .swiper-button-prev {
+    &::after {
+      background-image: url("/svgs/news/prev-icon.svg");
+      width: 1.25em;
+      height: 1.125em;
+    }
+  }
+
+  .swiper-button-next {
+    &::after {
+      background-image: url("/svgs/news/next-icon.svg");
+      width: 1.25em;
+      height: 1.125em;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.investmentCardSlider,
+.accountTypeSlider,
+.bankingSolutionSecSlider {
+  .swiper {
+    padding-bottom: 3.125em;
+
+    @media #{$ipad} {
+      padding-bottom: 2em;
+    }
+  }
+
+  .swiper-scrollbar-drag {
+    background: var(--white-color);
+  }
+
+  .swiper-scrollbar {
+
+    &.blue__scrollbar {
+      background-color: rgba(var(--color-brand-red-rgb), 0.1);
+
+      .swiper-scrollbar-drag {
+        background: var(--primary-color);
+      }
+    }
+
+    background: rgba(217, 217, 217, 0.20);
+    width: 86.5% !important;
+    // right: 4.6875em !important;
+    // left: auto !important;
+    position: relative !important;
+    bottom: auto !important;
+    height: 0.375em !important;
+
+    @media #{$ipadpro} {
+      width: 75% !important;
+    }
+
+    @media #{$mobL} {
+      width: 65% !important;
+    }
+
+    .swiper-scrollbar-horizontal {
+      height: 0.375em;
+
+      @media #{$mobL} {
+        display: none;
+      }
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 3.1875em;
+    height: 3.1875em;
+    flex: 0 0 3.1875em;
+    border: 1px solid var(--white-color);
+    border-radius: 50%;
+    background: rgba(var(--white-color-rgba), );
+    position: static;
+    margin: 0;
+    transition: var(--transition-ease);
+
+    @media #{$desktop} {
+      &:hover {
+        background: var(--color-brand-red);
+      }
+    }
+
+    @media #{$mobL} {
+      width: 2.4285em;
+      height: 2.4285em;
+      flex: 0 0 2.4285em;
+    }
+
+    &.blue__btn {
+      border-color: var(--primary-color);
+      background-color: var(--primary-color);
+    }
+  }
+
+  .swiper-button-prev::after,
+  .swiper-rtl .swiper-button-next::after {
+    font-size: 1em;
+    content: "";
+    background: url("/svgs/leftArrow.svg") center/contain no-repeat;
+    width: 1.25em;
+    height: 1.125em;
+
+    @media #{$ipadpro} {
+      width: 1em;
+      height: 0.875em;
+    }
+  }
+
+  .swiper-button-next::after,
+  .swiper-rtl .swiper-button-prev::after {
+    font-size: 1em;
+    content: "";
+    background: url("/svgs/rightArrow.svg") center/contain no-repeat;
+    width: 1.25em;
+    height: 1.125em;
+
+    @media #{$ipadpro} {
+      width: 1em;
+      height: 0.875em;
+    }
+  }
+
+  .blue__btn {
+
+    &.swiper-button-prev::after,
+    &.swiper-rtl .swiper-button-next::after {
+      background: url("/svgs/leftArrowWhite.svg") center/contain no-repeat;
+    }
+
+    &.swiper-button-next::after,
+    &.swiper-rtl .swiper-button-prev::after {
+      background: url("/svgs/rightArrowWhite.svg") center/contain no-repeat;
+    }
+  }
+
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: auto;
+  }
+
+  .custom-navigation-and-pagination {
+    display: flex;
+    align-items: center;
+
+    .swiper-button-wrapper {
+      display: flex;
+      gap: 0.625em;
+    }
+  }
+
+  .swiper-button-wrapper {
+    margin-right: 2.5em;
+
+    @media #{$mobL} {
+      margin-right: 1.5em;
+    }
+  }
+}
+
+.NewsCardSlider {
+  .swiper {
+    padding-bottom: 3.125em;
+
+    @media #{$ipad} {
+      padding-bottom: 2em;
+    }
+  }
+
+  .swiper-scrollbar-drag {
+    background: var(--secondary-color);
+  }
+
+  .swiper-scrollbar {
+    background: rgba(217, 217, 217, 0.20);
+    width: 86.5% !important;
+    // right: 4.6875em !important;
+    // left: auto !important;
+    position: relative !important;
+    bottom: auto !important;
+    height: 0.375em !important;
+
+    @media #{$ipadpro} {
+      width: 75% !important;
+    }
+
+    @media #{$mobL} {
+      width: 65% !important;
+    }
+
+    .swiper-scrollbar-horizontal {
+      height: 0.375em;
+
+      @media #{$mobL} {
+        display: none;
+      }
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 3.1875em;
+    height: 3.1875em;
+    flex: 0 0 3.1875em;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    background: var(--primary-color);
+    position: static;
+    margin: 0;
+    transition: var(--transition-ease);
+
+    @media #{$desktop} {
+      &:hover {
+        background: var(--primary-color);
+      }
+    }
+
+    @media #{$mobL} {
+      width: 2.4285em;
+      height: 2.4285em;
+      flex: 0 0 2.4285em;
+    }
+  }
+
+  .swiper-button-prev::after,
+  .swiper-rtl .swiper-button-next::after {
+    font-size: 1em;
+    content: "";
+    background: url("/svgs/leftArrowWhite.svg") center/contain no-repeat;
+    width: 1.25em;
+    height: 1.125em;
+
+    @media #{$ipadpro} {
+      width: 1em;
+      height: 0.875em;
+    }
+  }
+
+  .swiper-button-next::after,
+  .swiper-rtl .swiper-button-prev::after {
+    font-size: 1em;
+    content: "";
+    background: url("/svgs/rightArrowWhite.svg") center/contain no-repeat;
+    width: 1.25em;
+    height: 1.125em;
+
+    @media #{$ipadpro} {
+      width: 1em;
+      height: 0.875em;
+    }
+  }
+
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: auto;
+  }
+
+  .custom-navigation-and-pagination {
+    display: flex;
+    align-items: center;
+
+    .swiper-button-wrapper {
+      display: flex;
+      gap: 0.625em;
+    }
+  }
+
+  .swiper-button-wrapper {
+    margin-right: 2.5em;
+
+    @media #{$mobL} {
+      margin-right: 1.5em;
+    }
+  }
+}
+
+
+.BlogCardSlider {
+  .swiper {
+    padding-bottom: 3.125em;
+
+    @media #{$ipad} {
+      padding-bottom: 2em;
+    }
+  }
+
+  .swiper-scrollbar-drag {
+    background: var(--secondary-color);
+  }
+
+  .swiper-scrollbar {
+    background: rgba(217, 217, 217, 0.20);
+    width: 86.5% !important;
+    // right: 4.6875em !important;
+    // left: auto !important;
+    position: relative !important;
+    bottom: auto !important;
+    height: 0.375em !important;
+
+    @media #{$ipadpro} {
+      width: 75% !important;
+    }
+
+    @media #{$mobL} {
+      width: 65% !important;
+    }
+
+    .swiper-scrollbar-horizontal {
+      height: 0.375em;
+
+      @media #{$mobL} {
+        display: none;
+      }
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 3.1875em;
+    height: 3.1875em;
+    flex: 0 0 3.1875em;
+    border: 1px solid var(--primary-color);
+    border-radius: 50%;
+    background: var(--primary-color);
+    position: static;
+    margin: 0;
+    transition: var(--transition-ease);
+
+    @media #{$desktop} {
+      &:hover {
+        background: var(--primary-color);
+      }
+    }
+
+    @media #{$mobL} {
+      width: 2.4285em;
+      height: 2.4285em;
+      flex: 0 0 2.4285em;
+    }
+  }
+
+  .swiper-button-prev::after,
+  .swiper-rtl .swiper-button-next::after {
+    font-size: 1em;
+    content: "";
+    background: url("/svgs/leftArrowWhite.svg") center/contain no-repeat;
+    width: 1.25em;
+    height: 1.125em;
+
+    @media #{$ipadpro} {
+      width: 1em;
+      height: 0.875em;
+    }
+  }
+
+  .swiper-button-next::after,
+  .swiper-rtl .swiper-button-prev::after {
+    font-size: 1em;
+    content: "";
+    background: url("/svgs/rightArrowWhite.svg") center/contain no-repeat;
+    width: 1.25em;
+    height: 1.125em;
+
+    @media #{$ipadpro} {
+      width: 1em;
+      height: 0.875em;
+    }
+  }
+
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: auto;
+  }
+
+  .custom-navigation-and-pagination {
+    display: flex;
+    align-items: center;
+
+    .swiper-button-wrapper {
+      display: flex;
+      gap: 0.625em;
+    }
+  }
+
+  .swiper-button-wrapper {
+    margin-right: 2.5em;
+
+    @media #{$mobL} {
+      margin-right: 1.5em;
+    }
+  }
+}
+
+
+.salary-slider-wrapper {
+  position: relative;
+
+  .swiper-slide {
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s;
+    opacity: 0.5;
+    filter: blur(1px);
+    transform: scale(0.85);
+    border-radius: 1.25em;
+    width: 60.0625em;
+    height: 31.5625em;
+    border-radius: 1.7840625em;
+    overflow: hidden;
+
+    @media #{$ipad} {
+      width: 80%;
+      height: 100%;
+    }
+
+    @media #{$mob} {
+      width: 90%;
+    }
+  }
+
+  .swiper-slide-active {
+    opacity: 1;
+    filter: none;
+    transform: scale(1.05);
+    z-index: 2;
+  }
+
+  .swiper-slide-next,
+  .swiper-slide-prev {
+    opacity: 0.8;
+    filter: blur(0.5px);
+    transform: scale(0.95);
+    z-index: 1;
+  }
+
+  .swiper-button-prev {
+    left: 24em;
+    transform: rotate(180deg);
+  }
+
+  .swiper-button-next {
+    right: 24em;
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 3.1875em;
+    height: 3.1875em;
+    flex: 0 0 3.1875em;
+    border: 1px solid var(--white-color);
+    border-radius: 50%;
+    background: rgba(var(--white-color-rgba), 0.1);
+    transition: var(--transition-ease);
+
+    @media #{$ipadpro} {
+      display: none;
+    }
+
+    &:hover {
+      background: var(--primary-color);
+    }
+
+    @media #{$mobL} {
+      width: 2.4285em;
+      height: 2.4285em;
+      flex: 0 0 2.4285em;
+    }
+  }
+
+  .swiper-button-prev::after,
+  .swiper-rtl .swiper-button-next::after {
+    font-size: 1em;
+    content: "";
+    background: url("/svgs/left-icon-slider.svg") center/contain no-repeat;
+    width: 1.0625em;
+    height: 0.75em;
+  }
+
+  .swiper-button-next::after,
+  .swiper-rtl .swiper-button-prev::after {
+    font-size: 1em;
+    content: "";
+    background: url("/svgs/left-icon-slider.svg") center/contain no-repeat;
+    width: 1.0625em;
+    height: 0.75em;
+  }
+}
+
+.testimonialSlider {
+  .swiper {
+    padding-bottom: 4.6875em;
+
+    @media #{$mobL} {
+      padding-bottom: 2em;
+    }
+  }
+
+  .swiper-scrollbar-drag {
+    background: var(--primary-color);
+
+  }
+
+  .swiper-scrollbar {
+    background: rgba(#D9D9D9, 0.5);
+    width: 86.5% !important;
+    // right: 4.6875em !important;
+    // left: auto !important;
+    position: relative !important;
+    bottom: auto !important;
+    height: 0.375em !important;
+
+    @media #{$ipadpro} {
+      width: 75% !important;
+    }
+
+    @media #{$mobL} {
+      width: 65% !important;
+    }
+
+    .swiper-scrollbar-horizontal {
+      height: 0.375em;
+
+      @media #{$mobL} {
+        display: none;
+      }
+    }
+  }
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    width: 3.1875em;
+    height: 3.1875em;
+    flex: 0 0 3.1875em;
+    border: 1px solid var(--white-color);
+    border-radius: 50%;
+    background: var(--primary-color);
+    position: static;
+    margin: 0;
+    transition: var(--transition-ease);
+
+    @media #{$desktop} {
+      &:hover {
+        background: var(--color-brand-red);
+      }
+    }
+
+    @media #{$mobL} {
+      width: 2.4285em;
+      height: 2.4285em;
+      flex: 0 0 2.4285em;
+    }
+  }
+
+  .swiper-button-prev::after,
+  .swiper-rtl .swiper-button-next::after {
+    font-size: 1em;
+    content: "";
+    background: url("/svgs/leftArrowWhite.svg") center/contain no-repeat;
+    width: 1.25em;
+    height: 1.125em;
+
+    @media #{$ipadpro} {
+      width: 1em;
+      height: 0.875em;
+    }
+  }
+
+  .swiper-button-next::after,
+  .swiper-rtl .swiper-button-prev::after {
+    font-size: 1em;
+    content: "";
+    background: url("/svgs/rightArrowWhite.svg") center/contain no-repeat;
+    width: 1.25em;
+    height: 1.125em;
+
+    @media #{$ipadpro} {
+      width: 1em;
+      height: 0.875em;
+    }
+  }
+
+  .swiper-pagination-bullets.swiper-pagination-horizontal {
+    width: auto;
+  }
+
+  .custom-navigation-and-pagination {
+    display: flex;
+    align-items: center;
+
+    .swiper-button-wrapper {
+      display: flex;
+      gap: 0.625em;
+    }
+  }
+
+  .swiper-button-wrapper {
+    margin-right: 2.5em;
+
+    @media #{$mobL} {
+      margin-right: 1.5em;
+    }
+  }
+
+  .swiper-slide-active {
+    .testimonialCard {
+      .imgWrapper {
+        width: 100%;
+        height: 100%;
+        transition: 1s;
+        left: 0;
+        top: 0;
+
+        &::before {
+          opacity: 1;
+          visibility: visible;
+          transition: var(--transition-ease);
+          transition-delay: .5s;
+        }
+      }
+
+      .contentWrapper {
+        * {
+          color: var(--white-color) !important;
+          transition: var(--transition-ease);
+          transition-delay: .5s;
+        }
+      }
+    }
+  }
+}
+
+.differece-slider {
+  height: 35.5em;
+
+  @media #{$ipadpro} {
+    height: auto;
+  }
+
+  @media #{$ipad} {
+    margin: 2em 0 0 0;
+  }
+
+  .swiper-slide {
+    width: 16.875em;
+    height: 11em;
+    opacity: 0.5;
+    transition: var(--transition-ease);
+
+    @media #{$ipadpro} {
+      width: 100%;
+      height: 6em;
+    }
+
+    @media #{$ipad} {
+      width: 8em;
+    }
+
+    &.swiper-slide-thumb-active {
+      opacity: 1;
+      transition: var(--transition-ease);
+    }
+  }
+
+  .differenceImg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+html[lang="ar"] {
+  .hero-banner {
+    .custom-navigation-and-pagination {
+      left: 14.0625em;
+      right: auto;
+      flex-direction: row-reverse;
+
+      @media #{$ipad} {
+        left: 4.0625em;
+      }
+    }
+  }
+
+  .investmentCardSlider,
+  .accountTypeSlider,
+  .bankingSolutionSecSlider,
+  .NewsCardSlider,
+  .BlogCardSlider {
+    .swiper-button-wrapper {
+      margin-left: 2.5em;
+      margin-right: 0;
+
+      @media #{$mobL} {
+        margin-left: 1.5em;
+      }
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      transform: rotate(180deg);
+    }
+  }
+}

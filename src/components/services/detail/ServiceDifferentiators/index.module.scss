@@ -1,0 +1,15 @@
+@use "../../../../styles/abstract/variable" as *;
+
+.section {
+  position: relative;
+  background:
+    radial-gradient(ellipse 50% 45% at 100% 20%, rgba(var(--color-brand-gold-rgb), 0.1), transparent 55%),
+    var(--color-bg-secondary);
+  overflow: hidden;
+}
+
+.list {
+  margin: 3em 0 0;
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,59 @@
+@use "../../../styles/abstract/variable" as *;
+
+.section {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: var(--color-bg-primary);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 0;
+    filter: blur(1px);
+  }
+
+  &::before {
+    width: min(42em, 70vw);
+    aspect-ratio: 1;
+    inset: -8% auto auto -12%;
+    background: radial-gradient(circle, rgba(var(--color-brand-red-rgb), 0.16), transparent 68%);
+  }
+
+  &::after {
+    width: min(36em, 60vw);
+    aspect-ratio: 1;
+    inset: auto -10% 5% auto;
+    background: radial-gradient(circle, rgba(var(--color-brand-gold-rgb), 0.1), transparent 68%);
+  }
+}
+
+.grid {
+  position: relative;
+  z-index: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.85em;
+  align-items: stretch;
+
+  @media #{$ipadpro} {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5em;
+  }
+
+  @media #{$mobL} {
+    grid-template-columns: 1fr;
+    gap: 1.25em;
+  }
+}
+
+.item {
+  min-width: 0;
+  height: 100%;
+}

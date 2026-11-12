@@ -1,0 +1,248 @@
+{
+  "hero": {
+    "eyebrow": "Your business, ready for the digital world",
+    "title": "Make your business easier to find, trust, and choose",
+    "titleParts": {
+      "before": "Make your business",
+      "accent": "easier to find,",
+      "after": "trust, and choose"
+    },
+    "description": "Marvexa Digital helps local businesses build a clear, consistent online presence. We bring together brand identity, social media, content, and advertising to help you connect with more customers.",
+    "primaryCta": {
+      "label": "Start a conversation",
+      "href": "/contact-us"
+    },
+    "secondaryCta": {
+      "label": "Explore services",
+      "href": "/services"
+    },
+    "imageSrc": "/assets/home/global.webp",
+    "imageAlt": "Marvexa Digital brand and marketing services",
+    "floatTags": ["Brand identity", "Social media", "Paid campaigns", "Websites"],
+    "marquee": [
+      "Branding",
+      "Content",
+      "Advertising",
+      "Websites",
+      "Local growth"
+    ]
+  },
+  "introduction": {
+    "eyebrow": "A practical partner for local business",
+    "title": "A stronger online presence starts with a clear plan",
+    "paragraphs": [
+      "Running a business takes focus. Keeping your brand, social channels, and marketing moving at the same time can quickly become another full-time job. We help you build a consistent presence and make it easier for customers to understand what you offer.",
+      "As a small agency based in Pakistan, we work closely with local businesses and tailor our support to what you need. From a single campaign to a complete brand launch, we bring thoughtful planning and dependable execution to every project."
+    ],
+    "imageSrc": "/assets/gemini/home.jfif",
+    "imageAlt": "Digital marketing and brand planning",
+    "imageCaption": "A stronger presence, built step by step",
+    "clientsLabel": "A simple approach, focused on progress",
+    "clients": ["Plan", "Create", "Reach", "Grow"]
+  },
+  "services": {
+    "eyebrow": "Capabilities",
+    "title": "The essentials for building your business online",
+    "cta": {
+      "label": "Explore More",
+      "href": "/services"
+    },
+    "items": [
+      {
+        "id": "social-media-presence",
+        "slug": "social-media-presence",
+        "title": "Social Media Appearance",
+        "description": "Build a polished, consistent presence across the platforms your customers use every day.",
+        "href": "/services/social-media-presence",
+        "imageSrc": "/assets/gemini/social-media-presence.webp",
+        "featured": true,
+        "order": 1
+      },
+      {
+        "id": "social-media-management",
+        "slug": "social-media-management",
+        "title": "Social Media Management & Content Strategy",
+        "description": "Plan and manage consistent posts, reels, stories, captions, and campaigns around your audience, offers, and business calendar.",
+        "href": "/services/social-media-management",
+        "imageSrc": "/assets/gemini/social-media-strategy.webp",
+        "featured": true,
+        "order": 2
+      },
+      {
+        "id": "paid-advertising",
+        "slug": "paid-advertising",
+        "title": "Meta, TikTok & Google Ads",
+        "description": "Reach relevant audiences with focused paid campaigns, careful testing, and ongoing optimization against your business goals.",
+        "href": "/services/paid-advertising",
+        "imageSrc": "/assets/gemini/advertisement.webp",
+        "featured": true,
+        "order": 3
+      },
+      {
+        "id": "ad-creative",
+        "slug": "ad-creative",
+        "title": "Ad Creative",
+        "description": "Develop videos, product imagery, reels, and campaign designs that communicate your value and encourage the next step.",
+        "href": "/services/ad-creative",
+        "imageSrc": "/assets/gemini/ad-creative.webp",
+        "featured": true,
+        "order": 4
+      },
+      {
+        "id": "website-landing-pages",
+        "slug": "website-landing-pages",
+        "title": "Landing Pages & Websites",
+        "description": "Give customers a clear path to learn about your business, browse your offer, and contact or buy from you.",
+        "href": "/services/website-landing-pages",
+        "imageSrc": "/assets/gemini/websites.webp",
+        "featured": true,
+        "order": 5
+      },
+      { "id": "brand-identity", "slug": "brand-identity", "title": "Build a Brand from Scratch", "description": "Create a memorable foundation for your business with a considered name, visual identity, colours, voice, and brand story.", "href": "/services/brand-identity", "imageSrc": "/assets/gemini/about.jfif", "featured": true, "order": 6 },
+      { "id": "pos-systems", "slug": "pos-systems", "title": "POS Systems", "description": "Set up practical point-of-sale tools for billing, sales tracking, and everyday reporting.", "href": "/services/pos-systems", "imageSrc": "/assets/gemini/pos.webp", "featured": true, "order": 7 },
+      { "id": "google-maps-visibility", "slug": "google-maps-visibility", "title": "Google Maps Visibility & Local SEO", "description": "Improve your local presence with a well-maintained Google Business Profile and accurate business details.", "href": "/services/google-maps-visibility", "imageSrc": "/assets/gemini/home.jfif", "featured": true, "order": 8 }
+    ]
+  },
+  "about": {
+    "eyebrow": "Meet Marvexa Digital",
+    "title": "Small agency. Personal service. Work built around you.",
+    "paragraphs": [
+      "We help local businesses take confident steps online, with services spanning branding, social media, advertising, websites, and business tools. Our goal is to make digital marketing feel clear, considered, and connected to the way your business works.",
+      "You’ll work with a small, hands-on team that takes time to understand your goals. We recommend the right next steps, explain the work in plain language, and keep the process collaborative from kickoff to delivery."
+    ],
+    "imageSrc": "/assets/home/about.webp",
+    "imageAlt": "Marvexa Digital working with a local business",
+    "statChip": {
+      "title": "Made for you",
+      "label": "not a one-size-fits-all package"
+    },
+    "cta": {
+      "label": "Explore more",
+      "href": "/about-us"
+    }
+  },
+  "testimonials": {
+    "eyebrow": "Our approach",
+    "title": "Clear thinking. Thoughtful creative. Consistent delivery.",
+    "stat": {
+      "value": 3,
+      "suffix": " steps",
+      "label": "Understand · Plan · Deliver"
+    },
+    "items": [
+      {
+        "quote": "We take time to understand your business before recommending a service. You’ll know what we’re doing, why it matters, and what comes next.",
+        "name": "Understand",
+        "location": "Your business and your goals"
+      },
+      {
+        "quote": "Your brand should feel like your business everywhere customers find you. We help bring your visuals, voice, and content into alignment.",
+        "name": "Plan",
+        "location": "The right services and priorities"
+      },
+      {
+        "quote": "Reach the people most likely to care about what you offer with considered campaigns across Meta, TikTok, or Google.",
+        "name": "Create",
+        "location": "Content and creative that fit your brand"
+      },
+      {
+        "quote": "A clear website or landing page gives people the confidence to take the next step, whether that’s visiting, booking, or buying.",
+        "name": "Reach",
+        "location": "The customers you want to connect with"
+      },
+      {
+        "quote": "We can help you get started from the ground up, with a brand identity and digital presence shaped around the business you want to build.",
+        "name": "Grow",
+        "location": "A digital presence built to keep improving"
+      }
+    ]
+  },
+  "faqs": {
+    "eyebrow": "FAQs",
+    "title": "Got Questions We Have Answers",
+    "items": [
+      {
+        "question": "Where is Marvexa Digital based?",
+        "answer": "Marvexa Digital is a Pakistan-based digital agency working with ambitious businesses and teams locally and internationally."
+      },
+      {
+        "question": "What can you help my business with?",
+        "answer": "We support social media presence and management, content strategy, brand creation, ad creative, Meta/TikTok/Google advertising, websites and landing pages, Google Maps visibility, and POS systems."
+      },
+      {
+        "question": "Do I need to use every service?",
+        "answer": "No. We can focus on the one area you need most or bring services together when that makes sense for your goals and budget."
+      }
+    ]
+  },
+  "blogs": {
+    "eyebrow": "Insights",
+    "title": "Ideas to help your business grow online",
+    "cta": {
+      "label": "More Articles",
+      "href": "/blogs"
+    }
+  },
+  "contact": {
+    "eyebrow": "Start a conversation",
+    "title": "Ready to make more of your online presence?",
+    "description": "Tell us about your business and what you want to achieve. We’ll talk through the options and help you find a practical place to start.",
+    "imageSrc": "/assets/contact-us-banner.webp",
+    "form": {
+      "title": "Get in Touch",
+      "description": "Share a little about your project and our team will get back to you to discuss the next steps.",
+      "submitLabel": "Send a Message",
+      "fields": [
+        {
+          "name": "fullName",
+          "label": "Full Name",
+          "placeholder": "Full Name",
+          "required": true,
+          "type": "text",
+          "maxLength": 100
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "placeholder": "Email",
+          "required": true,
+          "type": "email"
+        },
+        {
+          "name": "phone",
+          "label": "Phone Number",
+          "placeholder": "Phone Number",
+          "required": true,
+          "type": "tel",
+          "maxLength": 16
+        },
+        {
+          "name": "subject",
+          "label": "Subject",
+          "placeholder": "Subject",
+          "required": true,
+          "type": "text",
+          "maxLength": 100
+        },
+        {
+          "name": "message",
+          "label": "Message",
+          "placeholder": "Message",
+          "required": false,
+          "type": "textarea",
+          "maxLength": 500
+        }
+      ]
+    }
+  },
+  "sectionOrder": [
+    "hero",
+    "introduction",
+    "services",
+    "about",
+    "clients",
+    "faqs",
+    "blogs",
+    "contact"
+  ]
+}

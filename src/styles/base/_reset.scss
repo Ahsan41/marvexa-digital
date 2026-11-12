@@ -1,0 +1,244 @@
+html {
+  scroll-behavior: smooth;
+  /* clip avoids creating a scroll container that breaks position:sticky
+     (overflow-x: hidden on html/body is a common sticky killer) */
+  overflow-x: clip;
+  scroll-padding-top: 10em;
+
+  /* Native momentum scrolling on touch — Lenis must not own these devices */
+  @media #{$ipadpro} {
+    scroll-behavior: auto;
+  }
+
+  @media #{$mob} {
+    scroll-padding-top: 5em;
+  }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  direction: ltr;
+  text-align: left;
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  overflow-x: clip;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 1400px) and (min-width: 1300px) and (min-height: 900px) {
+    font-size: 11.485px;
+  }
+
+  @media #{$desktop} {
+    font-size: 16px;
+  }
+
+  @media #{$ipadpro} {
+    font-size: 14px !important;
+  }
+}
+
+img,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+/* Prefer intrinsic ratio for content images; fill/cover media set their own height */
+img:not([data-nimg="fill"]) {
+  height: auto;
+}
+
+
+
+ul,
+ol {
+  font-size: 1.5em; // 24px
+  font-weight: 400;
+  line-height: 1.16667em; // 28px / 24px
+  margin: 0 0 1.875em 0; // 45px / 24px
+  list-style-position: outside;
+  padding-left: 1em;
+
+  @media #{$ipadpro} {
+    font-size: 1em;
+    margin-bottom: 1em;
+  }
+
+  li {
+    margin-bottom: 0.63636em;
+
+    &::marker {
+      color: var(--black-color);
+    }
+  }
+
+  ol,
+  ul {
+    font-size: 1em;
+    font-weight: 400;
+    margin-top: 1em;
+  }
+}
+
+html[lang="ar"] {
+  body {
+    direction: rtl;
+  }
+
+  ol {
+    list-style-type: arabic-indic;
+  }
+}
+
+a {
+  font-size: inherit;
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--duration-fast) var(--ease-out-quart);
+
+  @media #{$desktop} {
+    &:hover {
+      color: var(--color-brand-red);
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    box-shadow: var(--focus-ring);
+    border-radius: 2px;
+  }
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+.no-scroll {
+  overflow: hidden;
+  height: 100%;
+}
+
+html.menu-open {
+  overflow: hidden;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.site-main {
+  flex: 1 0 auto;
+  min-height: 50vh;
+}
+
+
+iframe {
+  border: 0;
+}
+
+
+button {
+  font-family: var(--Dubai); // Pending
+  -webkit-appearance: button;
+  appearance: button;
+  font-size: inherit;
+  background: transparent;
+  border: 0;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+textarea {
+  font-size: inherit;
+  resize: none;
+}
+
+::placeholder {
+  opacity: 1;
+  color: rgba(var(--white-color-rgba), 0.7);
+}
+
+
+picture {
+  display: block;
+  height: 100%;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+// if you are un commenting this code , please set according to project.
+
+// input:-webkit-autofill,
+// input:-webkit-autofill:hover,
+// input:-webkit-autofill:focus,
+// input:-webkit-autofill:active {
+//   -webkit-background-clip: text;
+//   -webkit-text-fill-color: rgba(var(--black-color), 1);
+//   transition: background-color 5000s ease-in-out 0s;
+//   box-shadow: inset 0 0 20px 20px transparent;
+// }
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+html[lang="ar"] {
+
+  input,
+  textarea,
+  select,
+  button {
+    text-align: right;
+  }
+
+  ul,
+  ol {
+    padding-right: 1em;
+    padding-left: 0;
+  }
+
+  .breadcrumb-nav {
+    display: none;
+  }
+}

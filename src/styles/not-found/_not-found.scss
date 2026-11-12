@@ -1,0 +1,53 @@
+.main__wrapper {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+
+    .notFound__wrapper {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        max-width: 38.5em;
+        margin: auto;
+        text-align: center;
+        background-color: var(--primary-color);
+
+        h6 {
+            font-size: 2em;
+            font-weight: 600;
+        }
+
+        h2 {
+            font-size: 5em;
+            color: var(--color-secondarycol);
+            margin: 0.3em 0;
+
+        }
+
+        a {
+            background-color: var(--color-secondarycol);
+            padding: 0.8em 1.5em;
+            border-radius: 10px;
+            font-weight: 500;
+            transition: all ease-in-out 0.3s;
+            color: var(--color-greencol);
+
+            &:hover {
+                background-color: var(--color-blackcol);
+            }
+        }
+
+        span {
+            margin-bottom: 1em;
+        }
+
+        p {
+            font-weight: 400;
+        }
+    }
+}

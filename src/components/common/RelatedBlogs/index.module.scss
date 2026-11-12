@@ -1,0 +1,52 @@
+@use "../../../styles/abstract/variable" as *;
+
+.section {
+  position: relative;
+  background:
+    radial-gradient(ellipse 50% 40% at 80% 0%, rgba(var(--color-brand-red-rgb), 0.1), transparent 55%),
+    var(--color-bg-primary);
+  overflow: hidden;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 2.5em;
+}
+
+.swiper {
+  width: 100%;
+  overflow: hidden;
+  padding-bottom: 0.25em;
+}
+
+.slide {
+  height: auto;
+
+  > a {
+    height: 100%;
+  }
+}
+
+.fallbackTrack {
+  width: 100%;
+  min-height: 22em;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.25em;
+  margin-top: 1.75em;
+
+  :global(.custom-swiper-navigation) {
+    align-self: center;
+    flex-shrink: 0;
+  }
+
+  @media #{$mob} {
+    justify-content: center;
+  }
+}

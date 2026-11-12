@@ -1,0 +1,26 @@
+@use "../../../../styles/abstract/variable" as *;
+
+.section {
+  position: relative;
+  background:
+    radial-gradient(ellipse 55% 40% at 50% 100%, rgba(var(--color-brand-red-rgb), 0.12), transparent 55%),
+    var(--color-bg-primary);
+  overflow: hidden;
+}
+
+.grid {
+  margin: 3em 0 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.25em;
+
+  @media #{$ipadpro} {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  @media #{$mobL} {
+    grid-template-columns: 1fr;
+    gap: 1em;
+    max-width: 40em;
+  }
+}

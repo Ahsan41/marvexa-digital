@@ -1,0 +1,20 @@
+@use "../../../styles/abstract/variable" as *;
+
+.section {
+  position: relative;
+  background:
+    radial-gradient(ellipse 50% 40% at 50% 0%, rgba(var(--color-brand-red-rgb), 0.12), transparent 55%),
+    var(--color-bg-primary);
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5em;
+
+  @media #{$ipad} {
+    grid-template-columns: 1fr;
+    gap: 1.25em;
+  }
+}

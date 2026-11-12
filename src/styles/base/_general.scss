@@ -1,0 +1,131 @@
+.overflow-hidden {
+  overflow: hidden;
+}
+
+
+.modal-root-hidden {
+  overflow: hidden;
+}
+
+.transparent-bg {
+  background: transparent !important;
+}
+
+.white-bg {
+  background: var(--white-color) !important;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.styled-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: sans-serif;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.styled-table thead {
+  background-color: var(--color-bg-dark);
+  color: var(--white-color);
+}
+
+.styled-table th,
+.styled-table td {
+  text-align: left;
+  padding: 12px;
+  border: 1px solid #d9d9d9;
+  width: 50%;
+  font-weight: 400;
+}
+
+.styled-table tbody tr:nth-child(even) {
+  background-color: var(--color-bg-secondary);
+}
+
+.styled-table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+
+.spacer {
+  height: 1.5em;
+}
+
+.mb-xs-1 {
+  @media #{$mob} {
+    margin-bottom: 2em !important;
+  }
+}
+
+.justify-content-start_md {
+  @media #{$mob} {
+    justify-content: flex-start !important;
+  }
+}
+
+.footer {
+  .w-uline {
+    &::after {
+      background: var(--white-color) !important;
+    }
+  }
+}
+
+body {
+  .uwy {
+    &.userway_p1 .userway_buttons_wrapper {
+      right: -6em !important;
+      bottom: 5em !important;
+      top: auto !important;
+
+      @media #{$ipadpro} {
+        right: -7em !important;
+        bottom: auto !important;
+        top: 15em !important;
+      }
+
+      @media #{$ipad} {
+        right: -4em !important;
+      }
+
+      @media #{$mob} {
+        right: 0 !important;
+        top: 20em !important;
+      }
+    }
+  }
+
+  #yottie_1 {
+    .yottie-widget-feed-section-slide {
+      background: var(--slate-color) !important;
+      padding-top: 0 !important;
+    }
+
+    .yottie-widget-video {
+      @media #{$mob} {
+        width: 42% !important;
+      }
+    }
+  }
+
+  .yottie-mw-180 .yottie-widget-video-preview-play {
+    @media #{$ipad} {
+      width: 3em;
+    }
+  }
+
+  div.yottie-widget-feed-section {
+    @media #{$mob} {
+      min-height: auto !important;
+    }
+  }
+}
+
+.getInTouch {
+  .generic-panel {
+    display: none;
+  }
+}

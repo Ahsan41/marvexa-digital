@@ -1,0 +1,25 @@
+@use "../../../styles/abstract/variable" as *;
+
+.section {
+  position: relative;
+  background: var(--color-bg-dark);
+  border-block: 1px solid var(--color-border-subtle);
+  overflow: hidden;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18em, 0.9fr);
+  gap: 3em;
+  align-items: stretch;
+
+  @media #{$ipad} {
+    grid-template-columns: 1fr;
+    gap: 1.75em;
+  }
+}
+
+.list {
+  min-width: 0;
+  border-top: 1px solid var(--color-border-subtle);
+}

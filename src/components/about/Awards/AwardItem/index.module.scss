@@ -1,0 +1,101 @@
+@use "../../../../styles/abstract/variable" as *;
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.25em minmax(0, 1fr);
+  gap: 1.5em;
+  padding: 1.5em 0 1.5em 0.25em;
+  transition: $transition;
+
+  @media #{$mobL} {
+    grid-template-columns: 1.75em minmax(0, 1fr);
+    gap: 1em;
+    padding: 1.25em 0;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      .content {
+        border-color: rgba(var(--color-brand-red-rgb), 0.4);
+        background:
+          linear-gradient(
+            rgba(var(--color-brand-red-rgb), 0.06),
+            rgba(var(--color-brand-red-rgb), 0.06)
+          ),
+          rgba(12, 12, 20, 0.72);
+        transform: translateX(0.35em);
+      }
+
+      .dot {
+        transform: scale(1.25);
+        box-shadow: 0 0 0 0.4em rgba(var(--color-brand-red-rgb), 0.2);
+      }
+    }
+  }
+}
+
+.marker {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  padding-top: 1.35em;
+}
+
+.dot {
+  width: 0.85em;
+  height: 0.85em;
+  border-radius: 50%;
+  background: var(--gradient-brand);
+  box-shadow: 0 0 0 0.3em rgba(var(--color-brand-red-rgb), 0.15);
+  transition: $transition;
+}
+
+.content {
+  min-width: 0;
+  padding: 1.5em 1.75em;
+  border-radius: 1.25em;
+  border: 1px solid var(--color-border-subtle);
+  background: rgba(12, 12, 20, 0.72);
+  transition: $transition;
+
+  @media #{$mobL} {
+    padding: 1.25em 1.15em;
+    border-radius: 1em;
+  }
+}
+
+.year {
+  display: inline-block;
+  margin-bottom: 0.5em;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-brand-red);
+}
+
+.award {
+  margin: 0 0 0.65em;
+  color: var(--color-text-primary);
+}
+
+.description {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+
+  @media #{$mobL} {
+    font-size: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .item,
+  .content,
+  .dot {
+    transition: none;
+  }
+}

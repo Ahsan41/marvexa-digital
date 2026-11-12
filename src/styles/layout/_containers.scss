@@ -1,0 +1,47 @@
+// Narrow / wide container variants — complements existing .container system in _theme.scss
+
+.container-narrow {
+  max-width: 46.875em;
+  width: 100%;
+  margin-inline: auto;
+  padding: 0 6%;
+
+  @media #{$desktop-lg} {
+    padding: 0 5em;
+  }
+
+  @media #{$ipadpro} {
+    padding: 0 3.75em;
+  }
+
+  @media #{$ipad} {
+    padding: 0 2.5em;
+  }
+
+  @media #{$mobL} {
+    padding: 0 1.25em;
+  }
+}
+
+.container-wide {
+  max-width: 94em; // ~1504px
+  width: 100%;
+  margin-inline: auto;
+  padding: 0 6%;
+
+  @media #{$desktop-lg} {
+    padding: 0 5em;
+  }
+
+  @media #{$ipadpro} {
+    padding: 0 3.75em;
+  }
+
+  @media #{$ipad} {
+    padding: 0 2.5em;
+  }
+
+  @media #{$mobL} {
+    padding: 0 1.25em;
+  }
+}

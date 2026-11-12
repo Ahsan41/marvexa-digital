@@ -1,0 +1,150 @@
+@use "../../../styles/abstract/variable" as *;
+
+.section {
+  position: relative;
+  background:
+    radial-gradient(ellipse 55% 50% at 90% 40%, rgba(var(--color-brand-red-rgb), 0.14), transparent 60%),
+    radial-gradient(ellipse 40% 45% at 10% 80%, rgba(var(--color-brand-gold-rgb), 0.1), transparent 55%),
+    var(--color-bg-secondary);
+  overflow: hidden;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  gap: 4em;
+  align-items: center;
+
+  @media #{$ipad} {
+    grid-template-columns: 1fr;
+    gap: 2.5em;
+  }
+
+  @media #{$mobL} {
+    gap: 2em;
+  }
+}
+
+.copy {
+  min-width: 0;
+  max-width: 40em;
+}
+
+.highlight {
+  margin: 0 0 1.5em;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+
+  @media #{$ipadpro} {
+    font-size: 1.5rem;
+  }
+
+  @media #{$mobL} {
+    font-size: 1.35rem;
+  }
+}
+
+.body {
+  margin: 0 0 1.5em;
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--color-text-secondary);
+
+  @media #{$ipadpro} {
+    font-size: 1.0625rem;
+  }
+
+  @media #{$mobL} {
+    font-size: 1rem;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+.statement {
+  margin: 0 0 1.5em;
+  padding: 0.85em 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary);
+  border-block: 1px solid rgba(var(--color-brand-red-rgb), 0.35);
+
+  @media #{$ipadpro} {
+    font-size: 1.35rem;
+  }
+
+  @media #{$mobL} {
+    font-size: 1.2rem;
+  }
+}
+
+.media {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 30em;
+
+  @media #{$ipad} {
+    min-height: 24em;
+    max-width: 28em;
+    margin-inline: auto;
+    order: -1;
+  }
+
+  @media #{$mobL} {
+    min-height: 20em;
+  }
+}
+
+.blob {
+  position: absolute;
+  inset: 0 4% 6% 0;
+  z-index: 0;
+  border-radius: 46% 54% 48% 52% / 52% 42% 58% 48%;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: var(--color-bg-dark-elevated);
+  overflow: hidden;
+  transition: $transition;
+
+  @media #{$ipad} {
+    inset: 0 4% 10% 0;
+  }
+
+  @media #{$mobL} {
+    inset: 0 2% 12% 0;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      border-radius: 42% 58% 55% 45% / 48% 52% 48% 52%;
+
+      .blobImage {
+        transform: scale(1.06);
+      }
+    }
+  }
+}
+
+.blobImage {
+  z-index: 1;
+  object-fit: cover;
+  object-position: center;
+  transition: $transition;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob,
+  .blobImage {
+    transition: none;
+  }
+}

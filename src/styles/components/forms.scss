@@ -1,0 +1,183 @@
+.form-group {
+    position: relative;
+    width: 100%;
+    margin-bottom: 1.875em;
+
+    @media #{$ipadpro} {
+        margin-bottom: 1.25em;
+    }
+
+    @media #{$mob} {
+        margin-bottom: 1em;
+    }
+
+    &.no-mb {
+        margin-bottom: 0;
+    }
+
+    select {
+        @media #{$ipadpro} {
+            padding-top: 0 !important;
+        }
+    }
+
+    .input,
+    select {
+        width: 100%;
+        padding: .25em 1.09090em;
+        font-size: 1.5em;
+        border: 1px solid rgba(var(--black-color-rgba), 0.2);
+        background: var(--white-color);
+        color: var(--color-text-primary);
+        transition: border-color var(--duration-fast) var(--ease-out-quart),
+          box-shadow var(--duration-fast) var(--ease-out-quart);
+        border-radius: .5em;
+        font-weight: 400;
+        height: 2.33em;
+        font-family: var(--Dubai-font);
+
+        @media #{$ipadpro} {
+            height: 2em;
+        }
+
+        @media #{$ipad} {
+            font-size: 1em;
+        }
+
+        &::placeholder {
+            color: var(--color-text-muted);
+            font-size: 1em;
+            font-weight: 400;
+        }
+
+        &:focus-visible {
+            border-color: var(--color-brand-red);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(var(--color-brand-red-rgb), 0.14);
+        }
+
+        &.textArea {
+            height: 7.5835em;
+            padding: 0.83333em;
+
+        }
+    }
+
+
+    .custom__select__control {
+        border-bottom: 1px solid var(--color-border-subtle);
+        background-color: transparent;
+    }
+
+    /* ================
+  Phone number field
+  ================== */
+    input[type="number"] {
+        -moz-appearance: textfield;
+        appearance: textfield;
+    }
+
+    .phone__wrapper {
+        background: var(--white-color);
+        border-radius: .5em;
+        border: 1px solid rgba(var(--black-color-rgba), .2) !important;
+
+        .react-tel-input {
+            font-size: 1em;
+        }
+
+        .react-tel-input .selected-flag {
+            width: 2.8125em !important;
+            padding-left: 1.25rem !important;
+        }
+
+        .react-tel-input .flag-dropdown {
+            border: none !important;
+            background: none !important;
+            border-right: none !important;
+            padding-right: 0.9375em !important;
+        }
+
+        .react-tel-input {
+            width: 100%;
+            background: transparent !important;
+            transition: 0.25s !important;
+        }
+
+        .phone-flag {
+            padding: .55em 1.09090em;
+            width: 100%;
+            padding-left: 3em;
+            // min-height: 2.9375em;
+            background: none !important;
+            outline: none !important;
+            border: none !important;
+            font-size: 1.5em !important;
+            font-family: var(--Dubai-font);
+            transition: 0.25s !important;
+            color: var(--black-color) !important;
+            height: 2.33em;
+
+            @media #{$ipad} {
+                font-size: 1em !important;
+                padding-left: 4em;
+            }
+
+        }
+
+
+
+        .flag-dropdown {
+            border: 0 !important;
+        }
+
+        .react-tel-input .selected-flag:hover,
+        .react-tel-input .selected-flag:focus,
+        .react-tel-input .flag-dropdown.open .selected-flag {
+            background: none !important;
+        }
+
+        .react-tel-input .country-list {
+            .country {
+                text-align: left !important;
+                font-size: .65em;
+                margin: 0 !important;
+                padding-bottom: 0 !important;
+            }
+
+            .search {
+                margin-bottom: 0 !important;
+            }
+        }
+    }
+}
+
+span.error {
+    margin-top: .8em;
+    display: inline-block;
+    color: var(--color-brand-red);
+    padding-left: .5em;
+    width: 100%;
+}
+
+html[lang="ar"] {
+    .form-group {
+        .phone__wrapper {
+            .phone-flag {
+                padding-left: 1.25em;
+                padding-right: 3em;
+            }
+
+            .react-tel-input .selected-flag {
+                padding-left: 0 !important;
+                padding-right: 1.25rem !important;
+            }
+        }
+
+        .phone__wrapper .react-tel-input .country-list .country {
+            text-align: right !important;
+        }
+    }
+
+
+}
