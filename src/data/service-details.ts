@@ -138,7 +138,7 @@ function buildServiceDetail(service: (typeof services)[number]): ServiceDetail {
       title: content.outcome,
       description: content.summary,
       cta,
-      imageSrc: "/assets/gemini/about.jfif",
+      imageSrc: "/assets/gemini/about.webp",
       imageAlt: `${service.title} for local businesses`,
       stats: [{ value: "01", label: "Clear scope" }, { value: "02", label: "Collaborative process" }, { value: "03", label: "Practical handover" }],
     },

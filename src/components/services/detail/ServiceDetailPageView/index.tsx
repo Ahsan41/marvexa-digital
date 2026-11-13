@@ -5,19 +5,13 @@ import LazyMount from "@/components/common/LazyMount";
 import ServiceAboutStats from "@/components/services/detail/ServiceAboutStats";
 import ServiceCapabilities from "@/components/services/detail/ServiceCapabilities";
 import { homeContact } from "@/data/home";
-import {
-  resolveServiceBlogs,
-  type ServiceDetail,
-} from "@/data/service-details";
+import type { ServiceDetail } from "@/data/service-details";
 
 const ServiceDifferentiators = dynamic(
   () => import("@/components/services/detail/ServiceDifferentiators"),
 );
 const ServiceProcess = dynamic(
   () => import("@/components/services/detail/ServiceProcess"),
-);
-const RelatedBlogs = dynamic(
-  () => import("@/components/common/RelatedBlogs"),
 );
 const Testimonials = dynamic(() => import("@/components/home/Testimonials"));
 const FAQs = dynamic(() => import("@/components/home/FAQs"));
@@ -30,8 +24,6 @@ type ServiceDetailPageViewProps = {
 };
 
 const ServiceDetailPageView = ({ detail }: ServiceDetailPageViewProps) => {
-  const blogItems = resolveServiceBlogs(detail.blogs.slugs);
-
   return (
     <>
       <InnerHero
@@ -74,16 +66,6 @@ const ServiceDetailPageView = ({ detail }: ServiceDetailPageViewProps) => {
           items={detail.faqs.items}
           titleId="service-faq-title"
           eyebrow="FAQ"
-        />
-      </LazyMount>
-
-      <LazyMount minHeight="30em">
-        <RelatedBlogs
-          title={detail.blogs.title}
-          cta={detail.blogs.cta}
-          items={blogItems}
-          titleId="service-blogs-title"
-          dataSection="service-blogs"
         />
       </LazyMount>
 

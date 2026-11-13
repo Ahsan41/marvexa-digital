@@ -3,7 +3,7 @@
 export const aboutPage = {
   hero: {
     title: "About us",
-    backgroundImage: "/assets/gemini/banner.jfif",
+    backgroundImage: "/assets/gemini/banner.webp",
   },
   mission: {
     title: "Helping local businesses make a confident start online",
@@ -13,7 +13,7 @@ export const aboutPage = {
     statement: "Digital support should be personal, practical, and connected to your goals.",
     additionalDescription:
       "Some businesses need a fresh brand and a strong foundation. Others are ready to improve their content, run paid campaigns, appear more prominently on Google Maps, or make it easier for customers to take action through a website or landing page. We listen first, then recommend a focused scope that fits your business and budget.",
-    imageSrc: "/assets/gemini/about.jfif",
+    imageSrc: "/assets/gemini/about.webp",
     imageAlt: "Marvexa Digital mission visual",
   },
   stats: {

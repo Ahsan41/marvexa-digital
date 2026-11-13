@@ -1,17 +1,5 @@
 @use "../../../../styles/abstract/variable" as *;
 
-.section {
-  padding-top: 4.5em;
-
-  @media #{$ipadpro} {
-    padding-top: 3.5em;
-  }
-
-  @media #{$mob} {
-    padding-top: 2.5em;
-  }
-}
-
 .featured {
   margin: 0 0 1.75em;
   position: relative;
@@ -42,7 +30,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1em 1.5em;
-  margin: 0 0 2.5em;
+  margin: 0 0 2em;
   padding-bottom: 1.25em;
   border-bottom: 1px solid var(--color-border-subtle);
 }

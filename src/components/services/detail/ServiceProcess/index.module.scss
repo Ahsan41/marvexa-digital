@@ -9,7 +9,7 @@
 }
 
 .grid {
-  margin: 3em 0 0;
+  margin: 0;
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 1.25em;

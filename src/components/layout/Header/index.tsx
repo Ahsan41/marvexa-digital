@@ -2,6 +2,7 @@
 
 import { useEffect, useId, useRef, useState } from "react";
 import dynamic from "next/dynamic";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Button from "@/components/common/Button";
@@ -104,8 +105,14 @@ const Header = () => {
       <div className={style.shell}>
         <div className={`container ${style.inner}`}>
           <Link href="/" className={style.logo} aria-label={siteConfig.name}>
-            <span className={style.logoMark} aria-hidden />
-            <span className={style.logoText}>{siteConfig.name}</span>
+            <Image
+              className={style.logoImage}
+              src="/assets/marvexa-logo-horizontal-light.webp"
+              alt=""
+              width={1506}
+              height={450}
+              priority
+            />
           </Link>
 
           <nav className={style.desktopNav} aria-label="Primary">

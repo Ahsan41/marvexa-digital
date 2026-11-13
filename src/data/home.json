@@ -34,7 +34,7 @@
       "Running a business takes focus. Keeping your brand, social channels, and marketing moving at the same time can quickly become another full-time job. We help you build a consistent presence and make it easier for customers to understand what you offer.",
       "As a small agency based in Pakistan, we work closely with local businesses and tailor our support to what you need. From a single campaign to a complete brand launch, we bring thoughtful planning and dependable execution to every project."
     ],
-    "imageSrc": "/assets/gemini/home.jfif",
+    "imageSrc": "/assets/gemini/home.webp",
     "imageAlt": "Digital marketing and brand planning",
     "imageCaption": "A stronger presence, built step by step",
     "clientsLabel": "A simple approach, focused on progress",
@@ -98,9 +98,9 @@
         "featured": true,
         "order": 5
       },
-      { "id": "brand-identity", "slug": "brand-identity", "title": "Build a Brand from Scratch", "description": "Create a memorable foundation for your business with a considered name, visual identity, colours, voice, and brand story.", "href": "/services/brand-identity", "imageSrc": "/assets/gemini/about.jfif", "featured": true, "order": 6 },
+      { "id": "brand-identity", "slug": "brand-identity", "title": "Build a Brand from Scratch", "description": "Create a memorable foundation for your business with a considered name, visual identity, colours, voice, and brand story.", "href": "/services/brand-identity", "imageSrc": "/assets/gemini/about.webp", "featured": true, "order": 6 },
       { "id": "pos-systems", "slug": "pos-systems", "title": "POS Systems", "description": "Set up practical point-of-sale tools for billing, sales tracking, and everyday reporting.", "href": "/services/pos-systems", "imageSrc": "/assets/gemini/pos.webp", "featured": true, "order": 7 },
-      { "id": "google-maps-visibility", "slug": "google-maps-visibility", "title": "Google Maps Visibility & Local SEO", "description": "Improve your local presence with a well-maintained Google Business Profile and accurate business details.", "href": "/services/google-maps-visibility", "imageSrc": "/assets/gemini/home.jfif", "featured": true, "order": 8 }
+      { "id": "google-maps-visibility", "slug": "google-maps-visibility", "title": "Google Maps Visibility & Local SEO", "description": "Improve your local presence with a well-maintained Google Business Profile and accurate business details.", "imageSrc": "/assets/gemini/home.webp", "featured": true, "order": 8 }
     ]
   },
   "about": {

@@ -24,7 +24,6 @@ export const navigation: NavItem[] = [
       { label: "Google Maps Visibility", href: "/services/google-maps-visibility" },
     ],
   },
-  { label: "Blogs", href: "/blogs" },
 ];
 
 export const primaryCta = {

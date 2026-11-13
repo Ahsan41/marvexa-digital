@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { contactInfo, navigation, siteConfig } from "@/data/site";
 import style from "./index.module.scss";
@@ -18,9 +19,14 @@ const Footer = () => {
       <div className={`container ${style.inner}`}>
         <div className={`custom-row ${style.row}`}>
           <div className={`col_12 col_md_6 col_lg_4 ${style.brand}`}>
-            <Link href="/" className={style.logo}>
-              <span className={style.logoMark} aria-hidden />
-              <span>{siteConfig.name}</span>
+            <Link href="/" className={style.logo} aria-label={siteConfig.name}>
+              <Image
+                className={style.logoImage}
+                src="/assets/marvexa-logo-horizontal.webp"
+                alt=""
+                width={1506}
+                height={450}
+              />
             </Link>
             <p className={style.tagline}>{siteConfig.defaultDescription}</p>
             <ul className={style.socials}>

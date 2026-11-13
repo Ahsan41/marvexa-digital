@@ -10,9 +10,9 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25em;
+  gap: 1em;
   text-align: center;
-  padding: 4.5em 2em;
+  padding: 4em 2em;
   border-radius: 1.75em;
   border: 1px solid rgba(var(--color-brand-red-rgb), 0.22);
   background:
@@ -22,7 +22,7 @@
   overflow: hidden;
 
   @media #{$mobL} {
-    padding: 3em 1.25em;
+    padding: 2.75em 1.25em;
     border-radius: 1.35em;
   }
 }
@@ -57,7 +57,7 @@
 .title {
   position: relative;
   z-index: 1;
-  margin: 0 0 0.5em;
+  margin: 0;
   max-width: 18em;
   color: var(--color-text-primary);
 }

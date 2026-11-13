@@ -49,7 +49,7 @@ const BlogArticle = ({
 }: BlogArticleProps) => {
   return (
     <section
-      className={`section-py-100 ${style.section}`}
+      className="section-py-100"
       aria-label="Blog content"
       data-section="blog-article"
     >

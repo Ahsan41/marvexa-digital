@@ -14,12 +14,12 @@
   grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
   gap: 3.5em;
   align-items: center;
-  margin-bottom: 3.5em;
+  margin-bottom: 2.5em;
 
   @media #{$ipadpro} {
     grid-template-columns: 1fr;
     gap: 2.5em;
-    margin-bottom: 2.5em;
+    margin-bottom: 2em;
   }
 }
 

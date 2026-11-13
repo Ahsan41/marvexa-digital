@@ -12,7 +12,6 @@ const Services = dynamic(() => import("@/components/home/Services"));
 const About = dynamic(() => import("@/components/home/About"));
 const Testimonials = dynamic(() => import("@/components/home/Testimonials"));
 const FAQs = dynamic(() => import("@/components/home/FAQs"));
-const Blogs = dynamic(() => import("@/components/home/Blogs"));
 const ContactSection = dynamic(
   () => import("@/components/common/ContactSection"),
 );
@@ -45,9 +44,6 @@ const HomePageView = () => {
           items={homeFaqs.items}
           titleId="home-faq-title"
         />
-      </LazyMount>
-      <LazyMount minHeight="32em">
-        <Blogs />
       </LazyMount>
       <LazyMount minHeight="40em" rootMargin="480px 0px">
         <ContactSection
