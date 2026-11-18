@@ -122,38 +122,63 @@
     }
   },
   "testimonials": {
-    "eyebrow": "Our approach",
-    "title": "Clear thinking. Thoughtful creative. Consistent delivery.",
-    "stat": {
-      "value": 3,
-      "suffix": " steps",
-      "label": "Understand · Plan · Deliver"
-    },
+    "eyebrow": "Client testimonials",
+    "title": "Words from the businesses we support",
+    "stat": null,
     "items": [
       {
-        "quote": "We take time to understand your business before recommending a service. You’ll know what we’re doing, why it matters, and what comes next.",
-        "name": "Understand",
-        "location": "Your business and your goals"
+        "category": "Zero to Brand - E-Commerce Brand Launch",
+        "quote": "I started with just an idea, no name, no logo, no store. Marvexa Digital built my complete brand from zero - logo, Shopify store, product shoot, and launch ads. I got my first order in just 9 days. Best investment I have ever made.",
+        "name": "Ahmed Khan",
+        "role": "Founder",
+        "company": "Noor Attars",
+        "location": "Lahore",
+        "rating": 5
       },
       {
-        "quote": "Your brand should feel like your business everywhere customers find you. We help bring your visuals, voice, and content into alignment.",
-        "name": "Plan",
-        "location": "The right services and priorities"
+        "category": "E-Commerce Services - Meta & TikTok Ads",
+        "quote": "We were running ads ourselves and losing money. After Marvexa took over our Meta and TikTok ads, our sales tripled in 2 months. Their ad creatives and retargeting strategy is on another level. Highly professional team.",
+        "name": "Mahnoor Fatima",
+        "role": "Owner",
+        "company": "Mahnoor Cosmetics",
+        "location": "Karachi",
+        "rating": 5
       },
       {
-        "quote": "Reach the people most likely to care about what you offer with considered campaigns across Meta, TikTok, or Google.",
-        "name": "Create",
-        "location": "Content and creative that fit your brand"
+        "category": "E-Commerce Services - Social Media Management",
+        "quote": "Marvexa manages our Instagram completely - daily posts, reels, and stories. Our page now looks premium and our followers are growing every single week. We don't worry about content anymore, they handle everything.",
+        "name": "Bilal Sheikh",
+        "role": "CEO",
+        "company": "Urban Wear PK",
+        "location": "Pakistan",
+        "rating": 5
       },
       {
-        "quote": "A clear website or landing page gives people the confidence to take the next step, whether that’s visiting, booking, or buying.",
-        "name": "Reach",
-        "location": "The customers you want to connect with"
+        "category": "Local Business - Google Maps Visibility & Ranking",
+        "quote": "Before Marvexa, patients could not find us on Google Maps. Now we rank at the top in our area. Our Google reviews increased and new patients come daily through Maps. This service alone changed our clinic.",
+        "name": "Dr. Ayesha Siddiqui",
+        "role": "Owner",
+        "company": "Smile Care Dental Clinic",
+        "location": "Islamabad",
+        "rating": 5
       },
       {
-        "quote": "We can help you get started from the ground up, with a brand identity and digital presence shaped around the business you want to build.",
-        "name": "Grow",
-        "location": "A digital presence built to keep improving"
+        "category": "Local Business - Website & POS System",
+        "quote": "Marvexa built a fast website with booking and billing system for my bakery. Now orders are organized, billing is easy, and customers can order directly on WhatsApp. My business runs so smoothly now.",
+        "name": "Usman Raza",
+        "role": "Owner",
+        "company": "Raza Bakers",
+        "location": "Hyderabad",
+        "rating": 5
+      },
+      {
+        "category": "E-Commerce Services - Landing Page & Ad Creative",
+        "quote": "Their landing page and product videos increased my conversions instantly. The same product that was not selling before started selling daily after their new creatives and Shopify landing page. I recommend Marvexa to every new brand.",
+        "name": "Sara Malik",
+        "role": "Founder",
+        "company": "GlowSkin",
+        "location": "Pakistan",
+        "rating": 5
       }
     ]
   },

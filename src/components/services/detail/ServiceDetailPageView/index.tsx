@@ -4,7 +4,7 @@ import ContentCta from "@/components/common/ContentCta";
 import LazyMount from "@/components/common/LazyMount";
 import ServiceAboutStats from "@/components/services/detail/ServiceAboutStats";
 import ServiceCapabilities from "@/components/services/detail/ServiceCapabilities";
-import { homeContact } from "@/data/home";
+import { homeContact, homeTestimonials } from "@/data/home";
 import type { ServiceDetail } from "@/data/service-details";
 
 const ServiceDifferentiators = dynamic(
@@ -51,12 +51,11 @@ const ServiceDetailPageView = ({ detail }: ServiceDetailPageViewProps) => {
 
       <LazyMount minHeight="34em">
         <Testimonials
-          title={detail.testimonials.title}
-          description={detail.testimonials.description}
-          items={detail.testimonials.items}
+          eyebrow={homeTestimonials.eyebrow}
+          title={homeTestimonials.title}
+          items={homeTestimonials.testimonials}
           titleId="service-testimonials-title"
-          eyebrow="Client voice"
-          stat={null}
+          stat={homeTestimonials.stat}
         />
       </LazyMount>
 

@@ -27,6 +27,8 @@ export type Testimonial = {
   role?: string;
   company?: string;
   avatarSrc?: string;
+  category?: string;
+  rating?: number;
 };
 
 export type FaqItem = {

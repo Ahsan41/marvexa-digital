@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Outfit } from "next/font/google";
+import FloatingWhatsApp from "@/components/common/FloatingWhatsApp";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Providers from "@/components/layout/Providers";
@@ -31,6 +32,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <FloatingWhatsApp />
         </Providers>
       </body>
     </html>
